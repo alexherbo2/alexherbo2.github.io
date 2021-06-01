@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on alexherbo2</title>
+    <link>https://alexherbo2.github.io/</link>
+    <description>Recent content in About on alexherbo2</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://alexherbo2.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mapbox Notes</title>
+      <link>https://alexherbo2.github.io/wiki/mapbox/notes/</link>
+      <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/wiki/mapbox/notes/</guid>
+      <description>DOMContentLoaded = (event) = { const tableOfContents = document.querySelector(&#39;#TableOfContents&#39;) if (tableOfContents) { const node = document.querySelector(&#39;#table-of-contents&#39;) node.replaceWith(tableOfContents) } const content = document.querySelector(&#39;main&#39;) const headings = content.querySelectorAll(&#39;h1[id], h2[id], h3[id], h4[id]&#39;) for (const heading of headings) { if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) { const item = tableOfContents.querySelector(`[href=&#34;#${heading.id}&#34;]`) if (item) { item.parentElement.remove() } } } } document.addEventListener(&#39;DOMContentLoaded&#39;, DOMContentLoaded)  Table of Contents  Repository  mapbox-gl-js-experiments  Links  https://mapbox.com https://account.mapbox.com https://docs.mapbox.com/mapbox-gl-js/api/ https://docs.mapbox.com/mapbox-gl-js/api/map/ https://docs.</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL Notes</title>
+      <link>https://alexherbo2.github.io/wiki/postgresql/notes/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/wiki/postgresql/notes/</guid>
+      <description>DOMContentLoaded = (event) = { const tableOfContents = document.querySelector(&#39;#TableOfContents&#39;) if (tableOfContents) { const node = document.querySelector(&#39;#table-of-contents&#39;) node.replaceWith(tableOfContents) } const content = document.querySelector(&#39;main&#39;) const headings = content.querySelectorAll(&#39;h1[id], h2[id], h3[id], h4[id]&#39;) for (const heading of headings) { if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) { const item = tableOfContents.querySelector(`[href=&#34;#${heading.id}&#34;]`) if (item) { item.parentElement.remove() } } } } document.addEventListener(&#39;DOMContentLoaded&#39;, DOMContentLoaded)  Table of Contents  Links  https://postgresql.org https://nixos.org/nixos/manual#module-postgresql https://github.com/PostgresApp/PostgresApp/issues/313  Installation /etc/nixos/configuration.nix
+services.postgresql.enable = true; services.</description>
+    </item>
+    
+    <item>
+      <title>Puppeteer Notes</title>
+      <link>https://alexherbo2.github.io/wiki/puppeteer/notes/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/wiki/puppeteer/notes/</guid>
+      <description>DOMContentLoaded = (event) = { const tableOfContents = document.querySelector(&#39;#TableOfContents&#39;) if (tableOfContents) { const node = document.querySelector(&#39;#table-of-contents&#39;) node.replaceWith(tableOfContents) } const content = document.querySelector(&#39;main&#39;) const headings = content.querySelectorAll(&#39;h1[id], h2[id], h3[id], h4[id]&#39;) for (const heading of headings) { if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) { const item = tableOfContents.querySelector(`[href=&#34;#${heading.id}&#34;]`) if (item) { item.parentElement.remove() } } } } document.addEventListener(&#39;DOMContentLoaded&#39;, DOMContentLoaded)  Table of Contents  Repository  puppeteer-experiments  Links  https://pptr.dev https://github.com/puppeteer/puppeteer https://npmjs.com/package/puppeteer https://github.com/puppeteer/puppeteer/blob/master/docs/api.md  Videos  Web Scraping With NodeJS and Puppeteer The power of Headless Chrome and browser automation (Google I/O &amp;lsquo;18) Scraping Reddit with Puppeteer &amp;amp; NodeJs  Examples See puppeteer-experiments.</description>
+    </item>
+    
+    <item>
+      <title>GitInfo</title>
+      <link>https://alexherbo2.github.io/wiki/git/info/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/wiki/git/info/</guid>
+      <description>DOMContentLoaded = (event) = { const tableOfContents = document.querySelector(&#39;#TableOfContents&#39;) if (tableOfContents) { const node = document.querySelector(&#39;#table-of-contents&#39;) node.replaceWith(tableOfContents) } const content = document.querySelector(&#39;main&#39;) const headings = content.querySelectorAll(&#39;h1[id], h2[id], h3[id], h4[id]&#39;) for (const heading of headings) { if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) { const item = tableOfContents.querySelector(`[href=&#34;#${heading.id}&#34;]`) if (item) { item.parentElement.remove() } } } } document.addEventListener(&#39;DOMContentLoaded&#39;, DOMContentLoaded)  Table of Contents  Root git rev-parse --show-toplevel Git directory git rev-parse --git-dir You can use its exit status to determine if the current directory is a Git repository.</description>
+    </item>
+    
+    <item>
+      <title>Create a keyboard interface to the web</title>
+      <link>https://alexherbo2.github.io/blog/chrome/create-a-keyboard-interface-to-the-web/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/blog/chrome/create-a-keyboard-interface-to-the-web/</guid>
+      <description>PostEdit:
+The roadmap to create a vi-like browser extension from scratch, from experimenting things in the console to native and cross-extension messaging. The first version of Krabby 🦀.
+ This post is written for Chrome, but can be adapted to the browser of your liking.
+ Configuration and default shortcuts for Chrome Configuration and default shortcuts for Firefox Configuration and default shortcuts for surf  Demos Krabby
+Try It  Make sure to deactivate your extension and browser bindings.</description>
+    </item>
+    
+    <item>
+      <title>NixOS – Installation Guide</title>
+      <link>https://alexherbo2.github.io/wiki/nixos/install-guide/</link>
+      <pubDate>Thu, 13 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/wiki/nixos/install-guide/</guid>
+      <description>About  Purely functional Linux distribution. Uses Nix package manager.   DOMContentLoaded = (event) = { const tableOfContents = document.querySelector(&#39;#TableOfContents&#39;) if (tableOfContents) { const node = document.querySelector(&#39;#table-of-contents&#39;) node.replaceWith(tableOfContents) } const content = document.querySelector(&#39;main&#39;) const headings = content.querySelectorAll(&#39;h1[id], h2[id], h3[id], h4[id]&#39;) for (const heading of headings) { if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) { const item = tableOfContents.querySelector(`[href=&#34;#${heading.id}&#34;]`) if (item) { item.parentElement.remove() } } } } document.addEventListener(&#39;DOMContentLoaded&#39;, DOMContentLoaded)  Table of Contents  1.</description>
+    </item>
+    
+    <item>
+      <title>Docker Notes</title>
+      <link>https://alexherbo2.github.io/wiki/docker/notes/</link>
+      <pubDate>Mon, 20 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/wiki/docker/notes/</guid>
+      <description>My first experiment with Docker after reading Jessie’s Docker Containers on the Desktop.
+ DOMContentLoaded = (event) = { const tableOfContents = document.querySelector(&#39;#TableOfContents&#39;) if (tableOfContents) { const node = document.querySelector(&#39;#table-of-contents&#39;) node.replaceWith(tableOfContents) } const content = document.querySelector(&#39;main&#39;) const headings = content.querySelectorAll(&#39;h1[id], h2[id], h3[id], h4[id]&#39;) for (const heading of headings) { if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) { const item = tableOfContents.querySelector(`[href=&#34;#${heading.id}&#34;]`) if (item) { item.parentElement.remove() } } } } document.addEventListener(&#39;DOMContentLoaded&#39;, DOMContentLoaded)  Table of Contents  The Console Try Ubuntu image:</description>
+    </item>
+    
+    <item>
+      <title>Exherbo – Installation Guide</title>
+      <link>https://alexherbo2.github.io/wiki/exherbo/install-guide/</link>
+      <pubDate>Thu, 14 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/wiki/exherbo/install-guide/</guid>
+      <description>About  Source-based Linux distribution. Decentralized development.  Writing your own packages, adding and modifying those from others is easy.   For developers.  Developing on a specific version of a program is easy.   Uses Paludis package manager.   DOMContentLoaded = (event) = { const tableOfContents = document.querySelector(&#39;#TableOfContents&#39;) if (tableOfContents) { const node = document.querySelector(&#39;#table-of-contents&#39;) node.replaceWith(tableOfContents) } const content = document.querySelector(&#39;main&#39;) const headings = content.querySelectorAll(&#39;h1[id], h2[id], h3[id], h4[id]&#39;) for (const heading of headings) { if (tableOfContents.</description>
+    </item>
+    
+    <item>
+      <title>D’où vient la mode ?</title>
+      <link>https://alexherbo2.github.io/resources/xenius/la-mode/</link>
+      <pubDate>Thu, 22 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/resources/xenius/la-mode/</guid>
+      <description>X:enius – D’où vient la mode ?
+Quelle est l’antithèse de la mode ? L’uniforme peut-être. La mode est censée souligner l’individualité, alors que l’uniforme est là pour la supprimer. Rien de plus opposé donc, en tout cas à première vue.
+ L’individualité est un concept récent dans l’histoire du costume.
+Au Moyen Âge, on portait l’habit correspondant à son ordre – à sa place dans la société. Les couleurs vives étaient l’apanage des nobles.</description>
+    </item>
+    
+    <item>
+      <title>Salle 071</title>
+      <link>https://alexherbo2.github.io/drafts/salle-071/</link>
+      <pubDate>Sun, 27 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/drafts/salle-071/</guid>
+      <description>Flou. Ses contours étaient flous. Mise au point. Toujours pas net. Encore un réglage et les cernes apparurent avec le rictus blasé, le regard distant, l’air de s’en moquer. Rien. Il ne disait rien. Pas d’agitation, de coups d’œil furtifs. Un calme tel un grand vide, lèvres serrées sur un sourire figé qui ne s’éteignait pas. Il était absent, comme pas d’ici, étranger, loin de lui-même.
+Qu’est-ce que tu en penses, Nick ?</description>
+    </item>
+    
+    <item>
+      <title>Les demi-vérités</title>
+      <link>https://alexherbo2.github.io/resources/instinctive/demi-verites/</link>
+      <pubDate>Sat, 08 Sep 2007 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/resources/instinctive/demi-verites/</guid>
+      <description>Informations  Author: Natacha Kerensikova Source: Instinctive – Les demi-vérités  Dans mon article précédent, le réveil n’a pas sonné, j’ai décrit ce que j’appelle une demi-vérité. Ceux qui me côtoient l’ont probablement déjà entendu, mais je ne sais pas si c’était bien clair.
+Je fais une distinction entre un mensonge, où on dit volontairement quelque chose de faux, et une demi-vérité, où on dit quelque chose de complètement vrai, mais de façon à induire en erreur.</description>
+    </item>
+    
+    <item>
+      <title>Citations</title>
+      <link>https://alexherbo2.github.io/citations/misc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/citations/misc/</guid>
+      <description>Raven’s Jig – Mon frère
+ La Conscience ?
+Elle n’empêche jamais de commettre un péché.
+Elle empêche seulement d’en jouir en paix !
+(Theodore Dreiser from http://fma-fr.com)
+   La liberté consiste à faire tout ce que permet la longueur de la chaîne. (François Cavanna from http://fma-fr.com)
+   We can’t undo the mistakes we’ve made. All we can do is try and find a way to make up for them.</description>
+    </item>
+    
+    <item>
+      <title>Control mpv from the command-line</title>
+      <link>https://alexherbo2.github.io/config/mpv/control-mpv-from-the-command-line/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/config/mpv/control-mpv-from-the-command-line/</guid>
+      <description>Configuration Enable the IPC support to control mpv from the command-line.
+~/.config/mpv/mpv.conf
+input-ipc-server=~~/socket Commands Play / Pause echo cycle pause | socat - &amp;#34;$XDG_CONFIG_HOME/mpv/socket&amp;#34; You can add a key-binding to XF86AudioPlay and XF86AudioPause media controls.
+Next Track echo playlist-next | socat - &amp;#34;$XDG_CONFIG_HOME/mpv/socket&amp;#34; You can add a key-binding to XF86AudioNext media control.
+Previous Track echo playlist-prev | socat - &amp;#34;$XDG_CONFIG_HOME/mpv/socket&amp;#34; You can add a key-binding to XF86AudioPrev media control.</description>
+    </item>
+    
+    <item>
+      <title>Descartes</title>
+      <link>https://alexherbo2.github.io/citations/descartes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/citations/descartes/</guid>
+      <description>Discours de la méthode Published: 1637  Même les histoires les plus fidèles, si elles ne changent ni n’augmentent la valeur des choses pour les rendre plus dignes d’être lues, au moins en omettent-elles presque toujours les plus basses et moins illustres circonstances, d’où vient que le reste ne paraît pas tel qu’il est.
+   C’est difficile de grandir. Au départ, tout semble aller de soi. Mais, on finit toujours par ressembler à ceux qu’on a rejetés.</description>
+    </item>
+    
+    <item>
+      <title>Douglas Kennedy</title>
+      <link>https://alexherbo2.github.io/citations/douglas-kennedy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/citations/douglas-kennedy/</guid>
+      <description>In God’s Country: Travels in the Bible Belt Published: 1989 Translated: French  Le doute est une composante essentielle de la nature humaine. Les certitudes, ça me fait peur.
+ The Big Picture Published: 1997 Translated: French  Au moment où j’avais signé les papiers de l’emprunt bancaire, je ne cessais de me répéter intérieurement que nous, les humains, sommes vraiment les architectes de notre propre geôle.
+   Nous ne cessons de rêver d’une existence plus libre tout en nous enferrant de plus en plus dans les obligations, dans les pièges domestiques.</description>
+    </item>
+    
+    <item>
+      <title>Hunter × Hunter</title>
+      <link>https://alexherbo2.github.io/citations/hunter-x-hunter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/citations/hunter-x-hunter/</guid>
+      <description>Informations  Author: Yoshihiro Togashi Studios: Madhouse Aired: 2011-10-02 → 2014-09-24  13ᵗʰ Hunter Chairman Election Arc Episode 148 FoxTamerMGO – The Ultimate Hunter × Hunter AMV
+Position: 16:54 → 17:08  Ging Freecss: You should enjoy the littles detours… To the fullest. Because that’s where you’ll find the things… More important than what you want.
+ </description>
+    </item>
+    
+    <item>
+      <title>Le dernier jour d’un condamné</title>
+      <link>https://alexherbo2.github.io/citations/victor-hugo/dernier-jour-condamne/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/citations/victor-hugo/dernier-jour-condamne/</guid>
+      <description>Informations  Author: Victor Hugo Published: 1829  Chapitre 1 Condamné à mort !
+Voilà cinq semaines que j’habite avec cette pensée, toujours seul avec elle, toujours glacé de sa présence, toujours courbé sous son poids !
+Autrefois, car il me semble qu’il y a plutôt des années que des semaines, j’étais un homme comme un autre homme. Chaque jour, chaque heure, chaque minute avait son idée. Mon esprit, jeune et riche, était plein de fantaisies.</description>
+    </item>
+    
+    <item>
+      <title>Maliki</title>
+      <link>https://alexherbo2.github.io/citations/maliki/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/citations/maliki/</guid>
+      <description>Informations  Author: Souillon Publisher: Ankama Éditions Website: maliki.com  Tome 1 : Broie la vie en rose Published: 2007-10-04  La vie est parfois rose, mais peut aussi avoir un sale goût ; ce qui la rend finalement à peu près vivable.
+   Non mais c’est vrai quoi ! Pourquoi j’irais me casser la tête à pondre des scénarios extravagants, alors que la vie réelle est déjà complètement improbable !</description>
+    </item>
+    
+    <item>
+      <title>Monogatari Series</title>
+      <link>https://alexherbo2.github.io/citations/monogatari-series/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/citations/monogatari-series/</guid>
+      <description>Informations  Studios: Shaft Source: Light novel  Bakemonogatari Aired: 2009-07-03 → 2010-06-25 Episode 8 Added: 2018-02-25 Bakemonogatari – Episode 8 – 07:04 → 07:13
+Position: 07:04 → 07:13  Suruga Kanbaru: W-Will you save me?
+Meme Oshino: I won’t save you. I’ll only lend you a hand. The only one who can save you is you yourself, young lady.
+“People have to save themselves.”
+ Episode 11 Added: 2018-02-25 Bakemonogatari – Episode 11 – 01:36 → 01:47</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://alexherbo2.github.io/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/projects/</guid>
+      <description>DOMContentLoaded = (event) = { const tableOfContents = document.querySelector(&#39;#TableOfContents&#39;) if (tableOfContents) { const node = document.querySelector(&#39;#table-of-contents&#39;) node.replaceWith(tableOfContents) } const content = document.querySelector(&#39;main&#39;) const headings = content.querySelectorAll(&#39;h1[id], h2[id], h3[id], h4[id]&#39;) for (const heading of headings) { if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) { const item = tableOfContents.querySelector(`[href=&#34;#${heading.id}&#34;]`) if (item) { item.parentElement.remove() } } } } document.addEventListener(&#39;DOMContentLoaded&#39;, DOMContentLoaded)  Table of Contents  Browser extensions  Krabby is a browser extension for keyboard-based navigation, inspired by Kakoune.</description>
+    </item>
+    
+    <item>
+      <title>Qu’est-ce qu’apprendre ?</title>
+      <link>https://alexherbo2.github.io/resources/perrenoud/apprendre/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/resources/perrenoud/apprendre/</guid>
+      <description>Informations  Author: Philippe Perrenoud Published: 2004-08 Source: Philippe Perrenoud – Qu’est-ce qu’apprendre ?  Qu’est-ce qu’apprendre ? Chacun n’est-il pas censé le savoir, puisque c’est l’expérience humaine la mieux partagée ? Les êtres humains ne peuvent survivre sans apprendre. Pourtant, rien n’est plus complexe, fragile, subjectif, imprévisible, incontrôlable que les processus d’apprentissage. Rien n’est moins aseptisé : source d’identité, de bonheur, de maîtrise, d’estime de soi, l’apprentissage peut aussi être source de souffrance, d’humiliation, d’aliénation.</description>
+    </item>
+    
+    <item>
+      <title>The Lord of the Rings</title>
+      <link>https://alexherbo2.github.io/citations/lotr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/citations/lotr/</guid>
+      <description>Informations  Author: J. R. R. Tolkien  The Fellowship of the Ring Published: 1954-07-29  Galadriel’s voice-over: The world is changed. Much that once was is lost, for none now live who remember it.
+   Three Rings for the Elven-kings under the sky,
+Seven for the Dwarf-lords in their halls of stone,
+Nine for Mortal Men doomed to die,
+One for the Dark Lord on his dark throne</description>
+    </item>
+    
+    <item>
+      <title>YouTube Comments</title>
+      <link>https://alexherbo2.github.io/citations/youtube/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/citations/youtube/</guid>
+      <description>Une fille frappe un mec sans raison et se prend une droite en retour
+ Lavemélinges E: Dans la pègre on apprend à punir sévèrement ceux qui te baisent. Et parfois c’est vraiment pénible de faire du mal à quelqu’un qu’on aimait. Mais sans ça les gens recommencent, les gens cèdent à la tentation de te doubler. Ils faut leur faire comprendre que ça n’est pas dans leur intérêt. Ici c’est la même chose, t’appelles ça se comporter en sauvage.</description>
+    </item>
+    
+  </channel>
+</rss>

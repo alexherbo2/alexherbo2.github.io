@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wikis on alexherbo2</title>
+    <link>https://alexherbo2.github.io/wiki/</link>
+    <description>Recent content in Wikis on alexherbo2</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 29 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://alexherbo2.github.io/wiki/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mapbox Notes</title>
+      <link>https://alexherbo2.github.io/wiki/mapbox/notes/</link>
+      <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/wiki/mapbox/notes/</guid>
+      <description>DOMContentLoaded = (event) = { const tableOfContents = document.querySelector(&#39;#TableOfContents&#39;) if (tableOfContents) { const node = document.querySelector(&#39;#table-of-contents&#39;) node.replaceWith(tableOfContents) } const content = document.querySelector(&#39;main&#39;) const headings = content.querySelectorAll(&#39;h1[id], h2[id], h3[id], h4[id]&#39;) for (const heading of headings) { if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) { const item = tableOfContents.querySelector(`[href=&#34;#${heading.id}&#34;]`) if (item) { item.parentElement.remove() } } } } document.addEventListener(&#39;DOMContentLoaded&#39;, DOMContentLoaded)  Table of Contents  Repository  mapbox-gl-js-experiments  Links  https://mapbox.com https://account.mapbox.com https://docs.mapbox.com/mapbox-gl-js/api/ https://docs.mapbox.com/mapbox-gl-js/api/map/ https://docs.</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL Notes</title>
+      <link>https://alexherbo2.github.io/wiki/postgresql/notes/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/wiki/postgresql/notes/</guid>
+      <description>DOMContentLoaded = (event) = { const tableOfContents = document.querySelector(&#39;#TableOfContents&#39;) if (tableOfContents) { const node = document.querySelector(&#39;#table-of-contents&#39;) node.replaceWith(tableOfContents) } const content = document.querySelector(&#39;main&#39;) const headings = content.querySelectorAll(&#39;h1[id], h2[id], h3[id], h4[id]&#39;) for (const heading of headings) { if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) { const item = tableOfContents.querySelector(`[href=&#34;#${heading.id}&#34;]`) if (item) { item.parentElement.remove() } } } } document.addEventListener(&#39;DOMContentLoaded&#39;, DOMContentLoaded)  Table of Contents  Links  https://postgresql.org https://nixos.org/nixos/manual#module-postgresql https://github.com/PostgresApp/PostgresApp/issues/313  Installation /etc/nixos/configuration.nix
+services.postgresql.enable = true; services.</description>
+    </item>
+    
+    <item>
+      <title>Puppeteer Notes</title>
+      <link>https://alexherbo2.github.io/wiki/puppeteer/notes/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/wiki/puppeteer/notes/</guid>
+      <description>DOMContentLoaded = (event) = { const tableOfContents = document.querySelector(&#39;#TableOfContents&#39;) if (tableOfContents) { const node = document.querySelector(&#39;#table-of-contents&#39;) node.replaceWith(tableOfContents) } const content = document.querySelector(&#39;main&#39;) const headings = content.querySelectorAll(&#39;h1[id], h2[id], h3[id], h4[id]&#39;) for (const heading of headings) { if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) { const item = tableOfContents.querySelector(`[href=&#34;#${heading.id}&#34;]`) if (item) { item.parentElement.remove() } } } } document.addEventListener(&#39;DOMContentLoaded&#39;, DOMContentLoaded)  Table of Contents  Repository  puppeteer-experiments  Links  https://pptr.dev https://github.com/puppeteer/puppeteer https://npmjs.com/package/puppeteer https://github.com/puppeteer/puppeteer/blob/master/docs/api.md  Videos  Web Scraping With NodeJS and Puppeteer The power of Headless Chrome and browser automation (Google I/O &amp;lsquo;18) Scraping Reddit with Puppeteer &amp;amp; NodeJs  Examples See puppeteer-experiments.</description>
+    </item>
+    
+    <item>
+      <title>GitInfo</title>
+      <link>https://alexherbo2.github.io/wiki/git/info/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/wiki/git/info/</guid>
+      <description>DOMContentLoaded = (event) = { const tableOfContents = document.querySelector(&#39;#TableOfContents&#39;) if (tableOfContents) { const node = document.querySelector(&#39;#table-of-contents&#39;) node.replaceWith(tableOfContents) } const content = document.querySelector(&#39;main&#39;) const headings = content.querySelectorAll(&#39;h1[id], h2[id], h3[id], h4[id]&#39;) for (const heading of headings) { if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) { const item = tableOfContents.querySelector(`[href=&#34;#${heading.id}&#34;]`) if (item) { item.parentElement.remove() } } } } document.addEventListener(&#39;DOMContentLoaded&#39;, DOMContentLoaded)  Table of Contents  Root git rev-parse --show-toplevel Git directory git rev-parse --git-dir You can use its exit status to determine if the current directory is a Git repository.</description>
+    </item>
+    
+    <item>
+      <title>NixOS – Installation Guide</title>
+      <link>https://alexherbo2.github.io/wiki/nixos/install-guide/</link>
+      <pubDate>Thu, 13 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/wiki/nixos/install-guide/</guid>
+      <description>About  Purely functional Linux distribution. Uses Nix package manager.   DOMContentLoaded = (event) = { const tableOfContents = document.querySelector(&#39;#TableOfContents&#39;) if (tableOfContents) { const node = document.querySelector(&#39;#table-of-contents&#39;) node.replaceWith(tableOfContents) } const content = document.querySelector(&#39;main&#39;) const headings = content.querySelectorAll(&#39;h1[id], h2[id], h3[id], h4[id]&#39;) for (const heading of headings) { if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) { const item = tableOfContents.querySelector(`[href=&#34;#${heading.id}&#34;]`) if (item) { item.parentElement.remove() } } } } document.addEventListener(&#39;DOMContentLoaded&#39;, DOMContentLoaded)  Table of Contents  1.</description>
+    </item>
+    
+    <item>
+      <title>Docker Notes</title>
+      <link>https://alexherbo2.github.io/wiki/docker/notes/</link>
+      <pubDate>Mon, 20 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/wiki/docker/notes/</guid>
+      <description>My first experiment with Docker after reading Jessie’s Docker Containers on the Desktop.
+ DOMContentLoaded = (event) = { const tableOfContents = document.querySelector(&#39;#TableOfContents&#39;) if (tableOfContents) { const node = document.querySelector(&#39;#table-of-contents&#39;) node.replaceWith(tableOfContents) } const content = document.querySelector(&#39;main&#39;) const headings = content.querySelectorAll(&#39;h1[id], h2[id], h3[id], h4[id]&#39;) for (const heading of headings) { if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) { const item = tableOfContents.querySelector(`[href=&#34;#${heading.id}&#34;]`) if (item) { item.parentElement.remove() } } } } document.addEventListener(&#39;DOMContentLoaded&#39;, DOMContentLoaded)  Table of Contents  The Console Try Ubuntu image:</description>
+    </item>
+    
+    <item>
+      <title>Exherbo – Installation Guide</title>
+      <link>https://alexherbo2.github.io/wiki/exherbo/install-guide/</link>
+      <pubDate>Thu, 14 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/wiki/exherbo/install-guide/</guid>
+      <description>About  Source-based Linux distribution. Decentralized development.  Writing your own packages, adding and modifying those from others is easy.   For developers.  Developing on a specific version of a program is easy.   Uses Paludis package manager.   DOMContentLoaded = (event) = { const tableOfContents = document.querySelector(&#39;#TableOfContents&#39;) if (tableOfContents) { const node = document.querySelector(&#39;#table-of-contents&#39;) node.replaceWith(tableOfContents) } const content = document.querySelector(&#39;main&#39;) const headings = content.querySelectorAll(&#39;h1[id], h2[id], h3[id], h4[id]&#39;) for (const heading of headings) { if (tableOfContents.</description>
+    </item>
+    
+  </channel>
+</rss>

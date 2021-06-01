@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configs on alexherbo2</title>
+    <link>https://alexherbo2.github.io/config/</link>
+    <description>Recent content in Configs on alexherbo2</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://alexherbo2.github.io/config/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Control mpv from the command-line</title>
+      <link>https://alexherbo2.github.io/config/mpv/control-mpv-from-the-command-line/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/config/mpv/control-mpv-from-the-command-line/</guid>
+      <description>Configuration Enable the IPC support to control mpv from the command-line.
+~/.config/mpv/mpv.conf
+input-ipc-server=~~/socket Commands Play / Pause echo cycle pause | socat - &amp;#34;$XDG_CONFIG_HOME/mpv/socket&amp;#34; You can add a key-binding to XF86AudioPlay and XF86AudioPause media controls.
+Next Track echo playlist-next | socat - &amp;#34;$XDG_CONFIG_HOME/mpv/socket&amp;#34; You can add a key-binding to XF86AudioNext media control.
+Previous Track echo playlist-prev | socat - &amp;#34;$XDG_CONFIG_HOME/mpv/socket&amp;#34; You can add a key-binding to XF86AudioPrev media control.</description>
+    </item>
+    
+  </channel>
+</rss>
