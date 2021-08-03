@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Docker Notes · alexherbo2</title>
+  
+    <meta name="description" content="First experiment with Docker">
+  
+  
+  
+    <link href="https://github.com/favicon.ico" rel="icon">
+  
+  
+  
+    <link href="/css/main.css" rel="stylesheet">
+  
+    <link href="/packages/selection.css" rel="stylesheet">
+  
+    <link href="/packages/krabby.css" rel="stylesheet">
+  
+  
+  
+    <script src="/js/main.js"></script>
+  
+    <script src="/packages/modal.js"></script>
+  
+    <script src="/packages/mouse-selection.js"></script>
+  
+    <script src="/packages/prompt.js"></script>
+  
+    <script src="/packages/hint.js"></script>
+  
+    <script src="/packages/mark.js"></script>
+  
+    <script src="/packages/selection.js"></script>
+  
+    <script src="/packages/mouse.js"></script>
+  
+    <script src="/packages/clipboard.js"></script>
+  
+    <script src="/packages/scroll.js"></script>
+  
+    <script src="/packages/player.js"></script>
+  
+    <script src="/packages/krabby.js"></script>
+  
+    <script src="/config.js"></script>
+  
+  
+  <script src="https://kit.fontawesome.com/b030fd7e2d.js" crossorigin="anonymous"></script>
+  
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" rel="stylesheet">
+</head>
+
+  <body>
+    <div id="header">
+      <header>
+  <a href="/">alexherbo2</a>
+</header>
+
+      <nav>
+  <ul>
+    
+      <li>
+        <a href="/blog">Blog</a>
+      </li>
+    
+      <li>
+        <a href="/citations">Citations</a>
+      </li>
+    
+      <li>
+        <a href="/config">Config</a>
+      </li>
+    
+      <li>
+        <a href="/projects">Projects</a>
+      </li>
+    
+      <li>
+        <a href="/wiki">Wiki</a>
+      </li>
+    
+  </ul>
+</nav>
+
+    </div>
+    <hr class="top">
+    <main>
+      
+  
+  
+  <div id="heading">
+    <div class="wrap">
+      <h1><a href="https://alexherbo2.github.io/wiki/docker/notes/">Docker Notes</a></h1>
+      <ul class="icons">
+        
+        
+          <li>
+            <a title="Raw" href="https://github.com/alexherbo2/website/raw/master/content/wiki/docker/notes.md"><i class="far fa-file"></i></a>
+          </li>
+        
+        
+          <li>
+            <a title="March 29, 2019" href="https://github.com/alexherbo2/website/commits/master/content/wiki/docker/notes.md"><i class="fab fa-git-square"></i></a>
+          </li>
+        
+        
+          <li>
+            <a title="Suggest an edit" href="https://github.com/alexherbo2/website/edit/master/content/wiki/docker/notes.md"><i class="fas fa-pen-square"></i></a>
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="date">
+        
+          <p>Posted on <time class="relative" datetime="2015-07-20 00:00:00 &#43;0000 UTC">July 20, 2015</time> (↻ <time class="relative" datetime="March 29, 2019">March 29, 2019</time>).</p>
+        
+      </div>
+    
+  </div>
+  <div class="invisible">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-console">The Console</a>
+      <ul>
+        <li><a href="#dockers-like-git">Docker’s like Git</a></li>
+      </ul>
+    </li>
+    <li><a href="#dockerfile">Dockerfile</a>
+      <ul>
+        <li><a href="#kakoune-support">Kakoune support</a></li>
+      </ul>
+    </li>
+    <li><a href="#cleaning">Cleaning</a></li>
+  </ul>
+</nav>
+  </div>
+  <div id="context-navigation">
+    <a><i class="fas fa-angle-up"></i></a>
+  </div>
+  <p>My first experiment with <a href="https://docker.com">Docker</a> after reading <a href="https://blog.jessfraz.com/post/docker-containers-on-the-desktop/">Jessie’s Docker Containers on the Desktop</a>.</p>
+<script>
+  DOMContentLoaded = (event) => {
+    const tableOfContents = document.querySelector('#TableOfContents')
+    if (tableOfContents) {
+      const node = document.querySelector('#table-of-contents')
+      node.replaceWith(tableOfContents)
+    }
+    const content = document.querySelector('main')
+    const headings = content.querySelectorAll('h1[id], h2[id], h3[id], h4[id]')
+    for (const heading of headings) {
+      if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) {
+        const item = tableOfContents.querySelector(`[href="#${heading.id}"]`)
+        if (item) {
+          item.parentElement.remove()
+        }
+      }
+    }
+  }
+  document.addEventListener('DOMContentLoaded', DOMContentLoaded)
+</script>
+
+<h2>Table of Contents</h2>
+<div id="table-of-contents"></div>
+
+<h2 id="the-console">The Console</h2>
+<p>Try <a href="https://hub.docker.com/_/ubuntu">Ubuntu image</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker pull ubuntu
+docker run ubuntu <span style="color:#75715e"># Runs Ubuntu and exits</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run <span style="color:#f92672">[</span>--interactive -i<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--tty -t<span style="color:#f92672">]</span> ubuntu
+</code></pre></div><p>Install <a href="https://kakoune.org">Kakoune</a> inside the Docker container:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt update
+apt install git pkg-config libncursesw5-dev
+git clone https://github.com/mawww/kakoune repositories/github.com/mawww/kakoune
+cd repositories/github.com/mawww/kakoune/src
+make install
+kak
+exit
+</code></pre></div><p>Exited Ubuntu.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run --interactive --tty ubuntu
+</code></pre></div><p>Ubuntu:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kak
+<span style="color:#75715e"># bash: kak: command not found</span>
+</code></pre></div><p>Kakoune is not installed??</p>
+<h3 id="dockers-like-git">Docker’s like Git</h3>
+<p><a href="https://stackoverflow.com/questions/19585028/i-lose-my-data-when-the-container-exits">https://stackoverflow.com/questions/19585028/i-lose-my-data-when-the-container-exits</a></p>
+<blockquote>
+<p>When you use <code>docker run</code> to start a container, it actually creates a new container
+based on the image you have specified.</p>
+</blockquote>
+<blockquote>
+<p>You need to commit the changes you make to the container and then run it.</p>
+</blockquote>
+<p>Exited Ubuntu.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker ps <span style="color:#f92672">[</span>--all -a<span style="color:#f92672">]</span>
+<span style="color:#75715e"># CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES</span>
+<span style="color:#75715e"># dbf27ffc058d ubuntu &#34;/bin/bash&#34; About an hour ago Exited (0) About a minute ago shinichi</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker attach shinichi
+<span style="color:#75715e"># You cannot attach to a stopped container, start it first</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker start shinichi
+docker attach shinichi
+</code></pre></div><p>Exited Ubuntu.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker commit shinichi shinichi
+</code></pre></div><p>Just testing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run --interactive --tty shinichi
+</code></pre></div><p>Exited Ubuntu.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker ps <span style="color:#f92672">[</span>--latest -l<span style="color:#f92672">]</span>
+<span style="color:#75715e"># CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES</span>
+<span style="color:#75715e"># 15529bec5b53 shinichi &#34;/bin/bash&#34; About a minute ago Exited (0) About a minute ago tashigi</span>
+</code></pre></div><h2 id="dockerfile">Dockerfile</h2>
+<p><a href="https://docs.docker.com/engine/reference/builder/">https://docs.docker.com/engine/reference/builder/</a></p>
+<p><code>dockers/ubuntu/kakoune/Dockerfile</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> ubuntu</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt update<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt install git pkg-config libncursesw5-dev --assume-yes<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> git clone https://github.com/mawww/kakoune repositories/github.com/mawww/kakoune<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> cd repositories/github.com/mawww/kakoune/src; make install<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENTRYPOINT</span> kak<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker build dockers/ubuntu/kakoune
+<span style="color:#75715e"># Successfully built d02682b6d01a</span>
+</code></pre></div><p>Build and tag:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker build <span style="color:#f92672">[</span>--tag -t<span style="color:#f92672">]</span> ubuntu/kakoune dockers/ubuntu/kakoune
+</code></pre></div><p>Tag after build:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker tag d02682b6d01a ubuntu/kakoune
+</code></pre></div><p>Just testing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run --interactive --tty ubuntu/kakoune
+</code></pre></div><p>Exited Ubuntu / Kakoune.</p>
+<h3 id="kakoune-support">Kakoune support</h3>
+<p>Added support for Kakoune: <a href="https://github.com/mawww/kakoune/pull/326">https://github.com/mawww/kakoune/pull/326</a></p>
+<h2 id="cleaning">Cleaning</h2>
+<p>Remove all containers:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker rm <span style="color:#66d9ef">$(</span>docker ps --no-trunc --all --quiet<span style="color:#66d9ef">)</span>
+</code></pre></div>
+
+    </main>
+    <hr class="bottom">
+    <footer>
+  <ul class="social">
+    
+      <li>
+        <a href="https://github.com/alexherbo2">GitHub</a>
+      </li>
+    
+      <li>
+        <a href="https://instagram.com/alexherbo2">Instagram</a>
+      </li>
+    
+      <li>
+        <a href="https://youtube.com/channel/UCv9nzkds34PnGOu6u_QvVBQ">YouTube</a>
+      </li>
+    
+  </ul>
+  <ul class="credits">
+    
+      <li>
+        Hosted on <a href="https://github.com/alexherbo2/website">GitHub</a>
+      </li>
+    
+    <li>
+      Powered by <a href="https://gohugo.io">Hugo</a>
+    </li>
+    <li>
+      Theme from <a href="http://stevelosh.com">Steve Losh</a>
+    </li>
+  </ul>
+</footer>
+
+  </body>
+</html>

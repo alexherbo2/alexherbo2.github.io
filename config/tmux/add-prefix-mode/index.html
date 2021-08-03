@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>tmux: Add prefix mode · alexherbo2</title>
+  
+  
+  
+    <link href="https://github.com/favicon.ico" rel="icon">
+  
+  
+  
+    <link href="/css/main.css" rel="stylesheet">
+  
+    <link href="/packages/selection.css" rel="stylesheet">
+  
+    <link href="/packages/krabby.css" rel="stylesheet">
+  
+  
+  
+    <script src="/js/main.js"></script>
+  
+    <script src="/packages/modal.js"></script>
+  
+    <script src="/packages/mouse-selection.js"></script>
+  
+    <script src="/packages/prompt.js"></script>
+  
+    <script src="/packages/hint.js"></script>
+  
+    <script src="/packages/mark.js"></script>
+  
+    <script src="/packages/selection.js"></script>
+  
+    <script src="/packages/mouse.js"></script>
+  
+    <script src="/packages/clipboard.js"></script>
+  
+    <script src="/packages/scroll.js"></script>
+  
+    <script src="/packages/player.js"></script>
+  
+    <script src="/packages/krabby.js"></script>
+  
+    <script src="/config.js"></script>
+  
+  
+  <script src="https://kit.fontawesome.com/b030fd7e2d.js" crossorigin="anonymous"></script>
+  
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" rel="stylesheet">
+</head>
+
+  <body>
+    <div id="header">
+      <header>
+  <a href="/">alexherbo2</a>
+</header>
+
+      <nav>
+  <ul>
+    
+      <li>
+        <a href="/blog">Blog</a>
+      </li>
+    
+      <li>
+        <a href="/citations">Citations</a>
+      </li>
+    
+      <li>
+        <a href="/config">Config</a>
+      </li>
+    
+      <li>
+        <a href="/projects">Projects</a>
+      </li>
+    
+      <li>
+        <a href="/wiki">Wiki</a>
+      </li>
+    
+  </ul>
+</nav>
+
+    </div>
+    <hr class="top">
+    <main>
+      
+  
+  
+  <div id="heading">
+    <div class="wrap">
+      <h1><a href="https://alexherbo2.github.io/config/tmux/add-prefix-mode/">tmux: Add prefix mode</a></h1>
+      <ul class="icons">
+        
+        
+          <li>
+            <a title="Raw" href="https://github.com/alexherbo2/website/raw/master/content/config/tmux/add-prefix-mode.md"><i class="far fa-file"></i></a>
+          </li>
+        
+        
+          <li>
+            <a title="August 2, 2021" href="https://github.com/alexherbo2/website/commits/master/content/config/tmux/add-prefix-mode.md"><i class="fab fa-git-square"></i></a>
+          </li>
+        
+        
+          <li>
+            <a title="Suggest an edit" href="https://github.com/alexherbo2/website/edit/master/content/config/tmux/add-prefix-mode.md"><i class="fas fa-pen-square"></i></a>
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="date">
+        
+          <p>Posted on <time class="relative" datetime="2019-12-28 00:00:00 &#43;0000 UTC">December 28, 2019</time> (↻ <time class="relative" datetime="August 2, 2021">August 2, 2021</time>).</p>
+        
+      </div>
+    
+  </div>
+  <div class="invisible">
+    <nav id="TableOfContents"></nav>
+  </div>
+  <div id="context-navigation">
+    <a><i class="fas fa-angle-up"></i></a>
+  </div>
+  <ul>
+<li>Enter <em>prefix mode</em> (yellow) with the prefix key (type the prefix key twice).</li>
+<li>Exit mode (green) with <code>Escape</code>.</li>
+</ul>
+<p><code>~/.tmux.conf</code></p>
+<pre><code class="language-tmux" data-lang="tmux">run-shell {
+  tmux bind-key #{prefix} set-option key-table prefix
+}
+
+bind-key Escape set-option key-table root
+</code></pre><p><strong>Note</strong>: <code>bind-key</code> does not work with variables, hence using <code>run-shell</code> instead of simply:</p>
+<pre><code class="language-tmux" data-lang="tmux">bind-key '#{prefix}' set-option key-table prefix
+</code></pre><p>You might want to display the current mode with a different color in the status line.</p>
+<p><code>~/.tmux.conf</code></p>
+<pre><code class="language-tmux" data-lang="tmux">set-option -g status-style 'fg=black,bg=#{?#{==:#{client_key_table},root},green,yellow}'
+</code></pre><p><strong>Discussion</strong>: <a href="https://reddit.com/r/tmux/comments/ehkjp5/add_prefix_mode/">reddit • tmux • Add prefix mode</a></p>
+<p>See also <a href="../make-tmux-modal/">Make tmux modal</a>.</p>
+
+
+    </main>
+    <hr class="bottom">
+    <footer>
+  <ul class="social">
+    
+      <li>
+        <a href="https://github.com/alexherbo2">GitHub</a>
+      </li>
+    
+      <li>
+        <a href="https://instagram.com/alexherbo2">Instagram</a>
+      </li>
+    
+      <li>
+        <a href="https://youtube.com/channel/UCv9nzkds34PnGOu6u_QvVBQ">YouTube</a>
+      </li>
+    
+  </ul>
+  <ul class="credits">
+    
+      <li>
+        Hosted on <a href="https://github.com/alexherbo2/website">GitHub</a>
+      </li>
+    
+    <li>
+      Powered by <a href="https://gohugo.io">Hugo</a>
+    </li>
+    <li>
+      Theme from <a href="http://stevelosh.com">Steve Losh</a>
+    </li>
+  </ul>
+</footer>
+
+  </body>
+</html>

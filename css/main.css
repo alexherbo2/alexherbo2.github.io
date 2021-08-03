@@ -1,0 +1,506 @@
+/* Variables ───────────────────────────────────────────────────────────────────
+*/
+
+/* Fonts */
+:root {
+  --font-serif: HoeflerText-Regular, serif;
+  --font-monospace: Consolas, monospace;
+}
+
+/* Dominant seventh chord
+   ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+   Base font size is a root chord.
+   <h1> is a major tenth.
+   <h2> is a minor seventh.
+   <h3> is a major third.
+   <h4> is a root chord.
+   The logo in the header is a major third.
+   Navigation links are a root chord.
+   Footer text is a perfect fifth (an octave down). */
+:root {
+  --font-size-root: 18px;
+  --font-size-major-third: 23px;
+  --font-size-perfect-fifth: 27px;
+  --font-size-minor-seventh: 32px;
+  --font-size-octave: 36px;
+  --font-size-major-tenth: 45px;
+}
+
+:root {
+  --font-size-tiny: 14px;
+}
+
+/* Colors */
+:root {
+  --color-black: #222;
+  --color-pink: #e50053;
+}
+
+/* Rules ───────────────────────────────────────────────────────────────────────
+*/
+
+.invisible {
+  display: none;
+}
+
+/* Reader
+╭───┬──────┬───╮
+│   │Header│   │
+│   ╰──────╯   │
+│   ┊      ┊   │
+│   ┊      ┊   │
+│   ┊      ┊   │
+│   ┊      ┊   │
+│   ┊      ┊   │
+│   ┊      ┊   │
+│   ╭──────╮   │
+│   │Footer│   │
+╰───┴──────┴───╯ */
+body {
+  display: flex;
+  flex-direction: column;
+  max-width: 615px;
+  margin: 0 auto;
+  margin-bottom: 5em;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-root);
+  line-height: 25px;
+  color: var(--color-black);
+  /* Enable ligatures */
+  text-rendering: optimizeLegibility;
+}
+
+/* Fluid layout */
+figure, img, video {
+  max-width: 100%;
+}
+
+/* Conserve 16:9 aspect ratio of embedded videos */
+.elastic {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.elastic iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Links are pink with no decoration
+   and underlined while hovering. */
+a {
+  color: var(--color-pink);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Heading links are black with no decoration
+   and pink while hovering. */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: var(--color-pink);
+  text-decoration: none;
+}
+
+/* Header
+   ‾‾‾‾‾‾
+- #Header
+  - Header
+  - Navigation
+
+Display elements on a single line.
+Text is lower case.
+
+Header is left-aligned.
+Links are black and pink while hovering.
+
+Navigation is right-aligned.
+Links are pink and underlined while hovering.
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ [steve losh]          [blog] - [projects] - [photography] - [links] - [feed] │
+╰──────────────────────────────────────────────────────────────────────────────╯ */
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-serif);
+  line-height: 50px;
+  text-transform: lowercase;
+}
+
+header {
+  font-size: var(--font-size-major-third);
+}
+
+header a {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+header a:hover {
+  color: var(--color-pink);
+  text-decoration: none;
+}
+
+#header nav {
+  text-align: right;
+}
+
+#header nav {
+  font-size: var(--font-size-root);
+}
+
+#header nav ul {
+  margin: 0;
+}
+
+#header nav ul li {
+  display: inline;
+}
+
+#header nav li + li::before {
+  content: "-";
+}
+
+/* Footer
+   ‾‾‾‾‾‾
+- Footer
+  - .Social
+  - .Credits
+
+Display elements on a single line.
+Text is centered.
+Links are pink and underlined while hovering.
+
+╭──────────────────────────────────────────────────────────────────╮
+│                 [GitHub] · [YouTube] · [Twitter]                 │
+│ Hosted on [GitHub] · Powered by [Hugo] · Theme from [Steve Losh] │
+╰──────────────────────────────────────────────────────────────────╯ */
+
+footer {
+  font-size: var(--font-size-tiny);
+  font-style: italic;
+}
+
+footer ul {
+  margin: 0;
+  text-align: center;
+}
+
+footer ul li {
+  display: inline;
+}
+
+footer li + li::before {
+  content: "・";
+}
+
+/* Separator
+╭───┬──────┬───╮
+│   │Header│   │
+│    ┈┈┈┈┈┈    │
+│              │
+│              │
+│              │
+│              │
+│              │
+│              │
+│    ┈┈┈┈┈┈    │
+│   │Footer│   │
+╰───┴──────┴───╯ */
+body > hr {
+  margin: 0;
+  height: 0.5px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+body > hr.top {
+  margin-bottom: 37px;
+}
+
+body > hr.bottom {
+  margin-top: 50px;
+  margin-bottom: 37px;
+}
+
+/* Section listing
+   ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+- [Article 1]
+  Description 1
+- [Article 2]
+  Description 2
+- [Article …]
+  Description … */
+.section-listing {
+  list-style: none;
+}
+
+.section-listing li {
+  margin-bottom: 25px;
+}
+
+/* Links are black with no decoration
+   and pink while hovering */
+.section-listing .title a {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-major-third);
+  line-height: 32px;
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+.section-listing .title a:hover {
+  color: var(--color-pink);
+  text-decoration: none;
+}
+
+.section-listing .description {
+  font-size: var(--font-size-root);
+  color: #333;
+  line-height: 25px;
+  font-style: italic;
+}
+
+/* Table of Contents */
+#TableOfContents ul {
+  list-style: none;
+}
+
+#TableOfContents ul:first-child {
+  padding-left: 0;
+}
+
+/* Context Navigation
+╭──────────────╮
+│           [^]│
+│   ~~~~~~~~   │
+│   ~~~~~~~~   │
+│   ~~~~~~~~   │
+│              │
+│   [Title]    │
+│   ~~~~~~~~   │
+│   ~~~~~~~~   │
+│   ~~~~~~~~   │
+│   ~~~~~~~~   │
+╰──────────────╯ */
+#context-navigation {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 5px;
+  font-size: var(--font-size-tiny);
+}
+
+/* Context navigation links are gray with no decoration
+   and pink while hovering. */
+#context-navigation a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+#context-navigation a:hover {
+  color: var(--color-pink);
+  text-decoration: none;
+}
+
+/* Headings */
+
+h1 {
+  font-size: var(--font-size-major-tenth);
+  line-height: 50px;
+  margin: 25px 0;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: var(--font-size-minor-seventh);
+  line-height: 50px;
+  margin: 25px 0;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: var(--font-size-major-third);
+  line-height: 25px;
+  margin: 25px 0;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: var(--font-size-root);
+  line-height: 25px;
+  margin: 25px 0;
+  font-weight: bold;
+}
+
+p code,
+li code,
+table code {
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+  font-size: var(--font-size-tiny);
+  padding: 0 3px;
+  line-height: 20px;
+  margin: 0;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* Citations */
+blockquote {
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+  padding: 11px 15px 0 15px;
+  margin-left: 2em;
+  overflow: auto;
+}
+
+code, pre {
+  font-family: var(--font-monospace);
+  font-size: var(--font-size-tiny);
+}
+
+pre {
+  line-height: 20px;
+  overflow-x: auto;
+  border: 1px solid #d5d5d5;
+  border-left: 10px solid #d5d5d5;
+  background-color: #fafafa;
+  padding: 11px 15px 12px;
+}
+
+/* Place file-name in code blocks while hovering.
+   Original idea from Google.
+   https://developer.chrome.com */
+pre {
+  position: relative;
+}
+
+pre[data-filename]:hover::after {
+  content: attr(data-filename);
+  background-color: #aaa;
+  color: #fff;
+  padding: 2px 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Style from GitHub */
+kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-family: var(--font-monospace);
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+/* Main */
+
+main #heading {
+  margin-bottom: 22px;
+}
+
+main #heading .wrap * {
+  display: inline;
+}
+
+main #heading .icons {
+  padding: 0;
+}
+
+main #heading .icons li {
+  display: inline;
+}
+
+/* Links are black with no decoration
+   and pink while hovering */
+main #heading .icons a {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+main #heading .icons a:hover {
+  color: var(--color-pink);
+  text-decoration: none;
+}
+
+main #heading .icons .important {
+  display: inline-block;
+  border-bottom: 2px solid var(--color-pink);
+}
+
+main #heading .date {
+  margin-top: 5px;
+  color: #666;
+}
+
+main #heading .date * {
+  margin: 0;
+}
+
+main .splash {
+  font-size: var(--font-size-perfect-fifth);
+  line-height: 32px;
+  text-align: center;
+}
+
+main .splash em {
+  color: var(--color-pink);
+}
+
+main img {
+  display: block;
+  margin: 25px auto 26px;
+  border: 11px solid #e5e5e5;
+  padding: 1px;
+  background-color: var(--color-black);
+}
+
+main hr {
+  display: none;
+}
+
+/* Scrollbar */
+
+main ::-webkit-scrollbar {
+  height: 25px;
+}
+
+main ::-webkit-scrollbar-button:start,
+main ::-webkit-scrollbar-button:end {
+  display: none;
+}
+
+main ::-webkit-scrollbar-track-piece {
+  background-color: #eee;
+}
+
+main ::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border: 7px solid #eee;
+  -webkit-background-clip: padding-box;
+  -webkit-border-radius: 12px;
+}

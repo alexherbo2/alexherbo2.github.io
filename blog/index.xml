@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on alexherbo2</title>
+    <link>https://alexherbo2.github.io/blog/</link>
+    <description>Recent content in Blogs on alexherbo2</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://alexherbo2.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create a keyboard interface to the web</title>
+      <link>https://alexherbo2.github.io/blog/chrome/create-a-keyboard-interface-to-the-web/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/blog/chrome/create-a-keyboard-interface-to-the-web/</guid>
+      <description>PostEdit:
+The roadmap to create a vi-like browser extension from scratch, from experimenting things in the console to native and cross-extension messaging. The first version of Krabby 🦀.
+ This post is written for Chrome, but can be adapted to the browser of your liking.
+ Configuration and default shortcuts for Chrome Configuration and default shortcuts for Firefox Configuration and default shortcuts for surf  Demos Krabby
+Try It  Make sure to deactivate your extension and browser bindings.</description>
+    </item>
+    
+  </channel>
+</rss>

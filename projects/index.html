@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Projects · alexherbo2</title>
+  
+  
+  
+    <link href="https://github.com/favicon.ico" rel="icon">
+  
+  
+  
+    <link href="/css/main.css" rel="stylesheet">
+  
+    <link href="/packages/selection.css" rel="stylesheet">
+  
+    <link href="/packages/krabby.css" rel="stylesheet">
+  
+  
+  
+    <script src="/js/main.js"></script>
+  
+    <script src="/packages/modal.js"></script>
+  
+    <script src="/packages/mouse-selection.js"></script>
+  
+    <script src="/packages/prompt.js"></script>
+  
+    <script src="/packages/hint.js"></script>
+  
+    <script src="/packages/mark.js"></script>
+  
+    <script src="/packages/selection.js"></script>
+  
+    <script src="/packages/mouse.js"></script>
+  
+    <script src="/packages/clipboard.js"></script>
+  
+    <script src="/packages/scroll.js"></script>
+  
+    <script src="/packages/player.js"></script>
+  
+    <script src="/packages/krabby.js"></script>
+  
+    <script src="/config.js"></script>
+  
+  
+  <script src="https://kit.fontawesome.com/b030fd7e2d.js" crossorigin="anonymous"></script>
+  
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" rel="stylesheet">
+</head>
+
+  <body>
+    <div id="header">
+      <header>
+  <a href="/">alexherbo2</a>
+</header>
+
+      <nav>
+  <ul>
+    
+      <li>
+        <a href="/blog">Blog</a>
+      </li>
+    
+      <li>
+        <a href="/citations">Citations</a>
+      </li>
+    
+      <li>
+        <a href="/config">Config</a>
+      </li>
+    
+      <li>
+        <a href="/projects">Projects</a>
+      </li>
+    
+      <li>
+        <a href="/wiki">Wiki</a>
+      </li>
+    
+  </ul>
+</nav>
+
+    </div>
+    <hr class="top">
+    <main>
+      
+  
+  
+  <div id="heading">
+    <div class="wrap">
+      <h1><a href="https://alexherbo2.github.io/projects/">Projects</a></h1>
+      <ul class="icons">
+        
+        
+          <li>
+            <a title="Raw" href="https://github.com/alexherbo2/website/raw/master/content/projects.md"><i class="far fa-file"></i></a>
+          </li>
+        
+        
+          <li>
+            <a title="August 2, 2021" href="https://github.com/alexherbo2/website/commits/master/content/projects.md"><i class="fab fa-git-square"></i></a>
+          </li>
+        
+        
+          <li>
+            <a title="Suggest an edit" href="https://github.com/alexherbo2/website/edit/master/content/projects.md"><i class="fas fa-pen-square"></i></a>
+          </li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  <div class="invisible">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#browser-extensions">Browser extensions</a></li>
+    <li><a href="#clis">CLIs</a>
+      <ul>
+        <li><a href="#tools">Tools</a></li>
+      </ul>
+    </li>
+    <li><a href="#tutorials">Tutorials</a></li>
+    <li><a href="#crystal-libraries">Crystal libraries</a></li>
+    <li><a href="#javascript-libraries">JavaScript libraries</a></li>
+    <li><a href="#dracula-themes">Dracula themes</a></li>
+    <li><a href="#hugo-themes">Hugo themes</a></li>
+    <li><a href="#alacritty">Alacritty</a></li>
+    <li><a href="#kakoune-plugins">Kakoune plugins</a>
+      <ul>
+        <li><a href="#kakoune--plugin-manager">Kakoune – Plugin manager</a></li>
+        <li><a href="#kakoune--windowing">Kakoune – Windowing</a></li>
+        <li><a href="#kakoune--integrated-environment">Kakoune – Integrated environment</a></li>
+        <li><a href="#kakoune--interfaces">Kakoune – Interfaces</a></li>
+        <li><a href="#kakoune--insertion">Kakoune – Insertion</a></li>
+        <li><a href="#kakoune--extensions">Kakoune – Extensions</a></li>
+        <li><a href="#kakoune--text-objects">Kakoune – Text objects</a></li>
+        <li><a href="#kakoune--language-support">Kakoune – Language support</a></li>
+        <li><a href="#kakoune--integrations">Kakoune – Integrations</a></li>
+        <li><a href="#kakoune--highlighters">Kakoune – Highlighters</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+  <div id="context-navigation">
+    <a><i class="fas fa-angle-up"></i></a>
+  </div>
+  <script>
+  DOMContentLoaded = (event) => {
+    const tableOfContents = document.querySelector('#TableOfContents')
+    if (tableOfContents) {
+      const node = document.querySelector('#table-of-contents')
+      node.replaceWith(tableOfContents)
+    }
+    const content = document.querySelector('main')
+    const headings = content.querySelectorAll('h1[id], h2[id], h3[id], h4[id]')
+    for (const heading of headings) {
+      if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) {
+        const item = tableOfContents.querySelector(`[href="#${heading.id}"]`)
+        if (item) {
+          item.parentElement.remove()
+        }
+      }
+    }
+  }
+  document.addEventListener('DOMContentLoaded', DOMContentLoaded)
+</script>
+
+<h2>Table of Contents</h2>
+<div id="table-of-contents"></div>
+
+<h2 id="browser-extensions">Browser extensions</h2>
+<ul>
+<li><a href="https://krabby.netlify.app">Krabby</a> is a browser extension for keyboard-based navigation, inspired by <a href="https://kakoune.org">Kakoune</a>.</li>
+<li><a href="https://github.com/alexherbo2/webextension-shell">Shell</a> is a browser extension and API to execute shell commands through <a href="https://developer.chrome.com/extensions/nativeMessaging">native messaging</a>.</li>
+<li><a href="https://github.com/alexherbo2/webextension-editor">Editor</a> is a browser extension to edit text fields with your favorite editor.</li>
+<li><a href="https://github.com/alexherbo2/webextension-dmenu">dmenu</a> is a browser extension to tab search with a dynamic menu program.</li>
+<li><a href="https://github.com/alexherbo2/webextension-commands">Commands</a> is a browser extension and API to perform browser actions, such as opening a new tab.</li>
+</ul>
+<h2 id="clis">CLIs</h2>
+<ul>
+<li><a href="https://github.com/alexherbo2/kakoune.cr">kakoune.cr</a> (kcr) is a command-line tool for <a href="https://kakoune.org">Kakoune</a>.</li>
+<li><a href="https://github.com/alexherbo2/batch">Batch</a> is a command-line program for <a href="https://en.wikipedia.org/wiki/Batch_processing">batch processing</a>.</li>
+<li><a href="https://github.com/alexherbo2/chronic">Chronic</a> is a natural language date-time parser.</li>
+<li><a href="https://github.com/alexherbo2/snippets">Snippets</a> is an editor agnostic command-line tool for managing snippets.</li>
+<li><a href="https://github.com/alexherbo2/password">Password</a> is a command-line program for managing passwords.</li>
+<li><a href="https://github.com/alexherbo2/launcher">Launcher</a> is a tiny application launcher.</li>
+<li><a href="https://github.com/alexherbo2/roman-numeral.rb">roman-numeral.rb</a> is a command-line program and library for parsing and generating <a href="https://en.wikipedia.org/wiki/Roman_numerals">Roman numerals</a>.</li>
+</ul>
+<h3 id="tools">Tools</h3>
+<ul>
+<li><a href="https://github.com/alexherbo2/git-tools">git-tools</a> ⇒ <a href="https://git-scm.com">Git</a> tools</li>
+<li><a href="https://github.com/alexherbo2/ffmpeg-tools">ffmpeg-tools</a> ⇒ <a href="https://ffmpeg.org">FFmpeg</a> tools</li>
+<li><a href="https://github.com/alexherbo2/sway-tools">sway-tools</a> ⇒ <a href="https://swaywm.org">Sway</a> tools</li>
+<li><a href="https://github.com/alexherbo2/tmux-tools">tmux-tools</a> ⇒ <a href="https://github.com/tmux/tmux">tmux</a> tools</li>
+</ul>
+<h2 id="tutorials">Tutorials</h2>
+<ul>
+<li><a href="https://github.com/alexherbo2/active-record.rb">active-record.rb</a> is a step-by-step implementation of the <a href="https://en.wikipedia.org/wiki/Active_record_pattern">active record pattern</a> for educational purposes.</li>
+</ul>
+<h2 id="crystal-libraries">Crystal libraries</h2>
+<ul>
+<li><a href="https://github.com/alexherbo2/walk.cr">walk.cr</a> is a <a href="https://crystal-lang.org">Crystal</a> library for walking a directory recursively.</li>
+<li><a href="https://github.com/alexherbo2/fifo.cr">fifo.cr</a> is a <a href="https://crystal-lang.org">Crystal</a> library for using <a href="https://en.wikipedia.org/wiki/FIFO_(computing_and_electronics)">FIFOs</a>.</li>
+<li><a href="https://github.com/alexherbo2/rsub.cr">rsub.cr</a> is a <a href="https://crystal-lang.org">Crystal</a> library for string replacement from the right-hand side.</li>
+<li><a href="https://github.com/alexherbo2/shell-escape.cr">shell-escape.cr</a> is a <a href="https://crystal-lang.org">Crystal</a> library and command-line program to escape strings, so that it can be safely used in a shell command-line.</li>
+</ul>
+<h2 id="javascript-libraries">JavaScript libraries</h2>
+<ul>
+<li><a href="https://github.com/alexherbo2/node.js">node.js</a> is a <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)">tree</a> <a href="https://en.wikipedia.org/wiki/M-ary_tree">node-based</a> implementation in JavaScript.</li>
+<li><a href="https://github.com/alexherbo2/modal.js">modal.js</a> is a JavaScript library to create modal interfaces.</li>
+<li><a href="https://github.com/alexherbo2/hint.js">hint.js</a> is a JavaScript library that lets you click with your keyboard.</li>
+<li><a href="https://github.com/alexherbo2/selection.js">selection.js</a> is a JavaScript library to create multiple selections, inspired by <a href="https://kakoune.org">Kakoune</a>.</li>
+<li><a href="https://github.com/alexherbo2/scroll.js">scroll.js</a> is a JavaScript library to scroll web pages smoothly.</li>
+<li><a href="https://github.com/alexherbo2/mouse.js">mouse.js</a> is a JavaScript library to simulate mouse input.</li>
+<li><a href="https://github.com/alexherbo2/clipboard.js">clipboard.js</a> is a JavaScript library to copy text to clipboard.</li>
+<li><a href="https://github.com/alexherbo2/prompt.js">prompt.js</a> is a drop-in replacement for the JavaScript’s <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt"><code>prompt()</code></a> function.</li>
+<li><a href="https://github.com/alexherbo2/mark.js">mark.js</a> is a JavaScript library to save and restore document position.</li>
+<li><a href="https://github.com/alexherbo2/player.js">player.js</a> is a JavaScript library for controlling media players.</li>
+<li><a href="https://github.com/alexherbo2/carousel.js">carousel.js</a> is a JavaScript library to slide sections.</li>
+</ul>
+<h2 id="dracula-themes">Dracula themes</h2>
+<p><a href="https://draculatheme.com">Dracula</a> is a dark theme for all the things.</p>
+<ul>
+<li><a href="https://draculatheme.com/kakoune">Kakoune</a></li>
+</ul>
+<h2 id="hugo-themes">Hugo themes</h2>
+<p><a href="https://gohugo.io">Hugo</a> is a static site generator.</p>
+<ul>
+<li><a href="https://github.com/alexherbo2/hugo-theme-steve-losh">Steve Losh</a></li>
+</ul>
+<h2 id="alacritty">Alacritty</h2>
+<p><a href="https://github.com/alacritty/alacritty">Alacritty</a> is a terminal emulator.</p>
+<ul>
+<li><a href="https://github.com/alexherbo2/alacritty-extended-keys">Extended keys</a></li>
+</ul>
+<h2 id="kakoune-plugins">Kakoune plugins</h2>
+<p><a href="https://kakoune.org">Kakoune</a> is a code editor based around the concept of multiple selections.</p>
+<h3 id="kakoune--plugin-manager">Kakoune – Plugin manager</h3>
+<ul>
+<li><a href="https://github.com/alexherbo2/plug.kak">plug.kak</a> ⇒ plugin manager.</li>
+</ul>
+<h3 id="kakoune--windowing">Kakoune – Windowing</h3>
+<ul>
+<li><a href="https://github.com/alexherbo2/alacritty.kak">alacritty.kak</a> ⇒ <a href="https://github.com/alacritty/alacritty">Alacritty</a> integration.</li>
+<li><a href="https://github.com/alexherbo2/terminal-mode.kak">terminal-mode.kak</a> ⇒ a mode to easily switch between the various windowing systems (<a href="https://github.com/alacritty/alacritty">Alacritty</a>, <a href="https://iterm2.com">iTerm</a>, <a href="https://sw.kovidgoyal.net/kitty/">kitty</a>, <a href="https://gnu.org/software/screen/">Screen</a>, <a href="https://github.com/tmux/tmux">tmux</a>, <a href="https://wayland.freedesktop.org">Wayland</a>, <a href="https://x.org">X11</a>).</li>
+</ul>
+<h3 id="kakoune--integrated-environment">Kakoune – Integrated environment</h3>
+<ul>
+<li><a href="https://github.com/alexherbo2/explore.kak">explore.kak</a> ⇒ explore files and buffers with the command implementation of your choice.</li>
+</ul>
+<h3 id="kakoune--interfaces">Kakoune – Interfaces</h3>
+<ul>
+<li><a href="https://github.com/alexherbo2/yank-ring.kak">yank-ring.kak</a> ⇒ an implementation of the <a href="https://gnu.org/software/emacs/manual/html_node/emacs/Kill-Ring.html">Kill Ring</a> for Kakoune.</li>
+</ul>
+<h3 id="kakoune--insertion">Kakoune – Insertion</h3>
+<ul>
+<li><a href="https://github.com/alexherbo2/auto-pairs.kak">auto-pairs.kak</a> ⇒ auto-paired characters.</li>
+<li><a href="https://github.com/alexherbo2/surround.kak">surround.kak</a> ⇒ surround selections with quotes, tags, etc.</li>
+<li><a href="https://github.com/alexherbo2/manual-indent.kak">manual-indent.kak</a> ⇒ indent with <code>Tab</code>, deindent with <code>Backspace</code>.</li>
+<li><a href="https://github.com/alexherbo2/sleuth.kak">sleuth.kak</a> ⇒ heuristically set buffer options.</li>
+</ul>
+<h3 id="kakoune--extensions">Kakoune – Extensions</h3>
+<ul>
+<li><a href="https://github.com/alexherbo2/capitalize-selections.kak">capitalize-selections.kak</a> ⇒ capitalize selections.</li>
+<li><a href="https://github.com/alexherbo2/change-directory.kak">change-directory.kak</a> ⇒ provide <a href="https://github.com/mawww/kakoune/blob/master/doc/pages/commands.asciidoc#files-and-buffers"><code>change-directory</code></a> related commands: change to the buffer or Git root directory.</li>
+<li><a href="https://github.com/alexherbo2/edit.kak">edit.kak</a> ⇒ provide various edit commands.</li>
+<li><a href="https://github.com/alexherbo2/evaluate-selections.kak">evaluate-selections.kak</a> ⇒ add an <code>evaluate-selections</code> command.</li>
+<li><a href="https://github.com/alexherbo2/execute-key.kak">execute-key.kak</a> ⇒ execute a single key with arbitrary content.</li>
+<li><a href="https://github.com/alexherbo2/move-line.kak">move-line.kak</a> ⇒ move selected lines up and down.</li>
+<li><a href="https://github.com/alexherbo2/objectify.kak">objectify.kak</a> ⇒ create text objects without setting your hair on fire.</li>
+<li><a href="https://github.com/alexherbo2/pad-number.kak">pad-number.kak</a> ⇒ pad numbers with leading zeros.</li>
+<li><a href="https://github.com/alexherbo2/phantom.kak">phantom.kak</a> ⇒ iterate selections, one by one.</li>
+<li><a href="https://github.com/alexherbo2/search.kak">search.kak</a> ⇒ search and jump.</li>
+<li><a href="https://github.com/alexherbo2/split-object.kak">split-object.kak</a> ⇒ add the ability to split object selections.</li>
+<li><a href="https://github.com/alexherbo2/toggle-highlighter.kak">toggle-highlighter.kak</a> ⇒ add a <code>toggle-highlighter</code> command.</li>
+<li><a href="https://github.com/alexherbo2/view-mode.kak">view-mode.kak</a> ⇒ a better view mode.</li>
+<li><a href="https://github.com/alexherbo2/word-select.kak">word-select.kak</a> ⇒ make <code>w</code> to move by word instead of word start.</li>
+</ul>
+<h3 id="kakoune--text-objects">Kakoune – Text objects</h3>
+<ul>
+<li><a href="https://github.com/alexherbo2/text-objects.kak">text-objects.kak</a> ⇒ provide extra text objects.</li>
+</ul>
+<h3 id="kakoune--language-support">Kakoune – Language support</h3>
+<ul>
+<li><a href="https://github.com/alexherbo2/rails.kak">rails.kak</a> ⇒ Easy navigation of the <a href="https://rubyonrails.org">Rails</a> directory structure.</li>
+</ul>
+<h3 id="kakoune--integrations">Kakoune – Integrations</h3>
+<ul>
+<li><a href="https://github.com/alexherbo2/batch.kak">batch.kak</a> ⇒ <a href="https://github.com/alexherbo2/batch">Batch</a> integration</li>
+<li><a href="https://github.com/alexherbo2/bc.kak">bc.kak</a> ⇒ <a href="https://en.wikipedia.org/wiki/Bc_(programming_language)">bc</a> integration</li>
+<li><a href="https://github.com/alexherbo2/chronic.kak">chronic.kak</a> ⇒ <a href="https://github.com/alexherbo2/chronic">Chronic</a> integration</li>
+<li><a href="https://github.com/alexherbo2/jq.kak">jq.kak</a> ⇒ <a href="https://stedolan.github.io/jq/">jq</a> integration</li>
+<li><a href="https://github.com/alexherbo2/mkdir.kak">mkdir.kak</a> ⇒ <a href="https://en.wikipedia.org/wiki/Mkdir">mkdir</a> integration</li>
+<li><a href="https://github.com/alexherbo2/snippets.kak">snippets.kak</a> ⇒ <a href="https://github.com/alexherbo2/snippets">Snippets</a> integration</li>
+<li><a href="https://github.com/alexherbo2/wl-clipboard.kak">wl-clipboard.kak</a> ⇒ clipboard integration for Wayland with <a href="https://github.com/bugaevc/wl-clipboard">wl-clipboard</a>.</li>
+</ul>
+<h3 id="kakoune--highlighters">Kakoune – Highlighters</h3>
+<ul>
+<li><a href="https://github.com/alexherbo2/current-word-highlighter.kak">current-word-highlighter.kak</a> ⇒ highlight the current word.</li>
+<li><a href="https://github.com/alexherbo2/out-of-view.kak">out-of-view.kak</a> ⇒ show out of view selections.</li>
+<li><a href="https://github.com/alexherbo2/palette.kak">palette.kak</a> ⇒ color preview of RGB and hex codes.</li>
+<li><a href="https://github.com/alexherbo2/search-highlighter.kak">search-highlighter.kak</a> ⇒ highlight the current search.</li>
+<li><a href="https://github.com/alexherbo2/volatile-highlighter.kak">volatile-highlighter.kak</a> ⇒ highlight the last change.</li>
+</ul>
+
+
+    </main>
+    <hr class="bottom">
+    <footer>
+  <ul class="social">
+    
+      <li>
+        <a href="https://github.com/alexherbo2">GitHub</a>
+      </li>
+    
+      <li>
+        <a href="https://instagram.com/alexherbo2">Instagram</a>
+      </li>
+    
+      <li>
+        <a href="https://youtube.com/channel/UCv9nzkds34PnGOu6u_QvVBQ">YouTube</a>
+      </li>
+    
+  </ul>
+  <ul class="credits">
+    
+      <li>
+        Hosted on <a href="https://github.com/alexherbo2/website">GitHub</a>
+      </li>
+    
+    <li>
+      Powered by <a href="https://gohugo.io">Hugo</a>
+    </li>
+    <li>
+      Theme from <a href="http://stevelosh.com">Steve Losh</a>
+    </li>
+  </ul>
+</footer>
+
+  </body>
+</html>

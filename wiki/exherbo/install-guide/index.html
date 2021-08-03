@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Exherbo – Installation Guide · alexherbo2</title>
+  
+    <meta name="description" content="The steps I followed to install and configure Exherbo">
+  
+  
+  
+    <link href="https://github.com/favicon.ico" rel="icon">
+  
+  
+  
+    <link href="/css/main.css" rel="stylesheet">
+  
+    <link href="/packages/selection.css" rel="stylesheet">
+  
+    <link href="/packages/krabby.css" rel="stylesheet">
+  
+  
+  
+    <script src="/js/main.js"></script>
+  
+    <script src="/packages/modal.js"></script>
+  
+    <script src="/packages/mouse-selection.js"></script>
+  
+    <script src="/packages/prompt.js"></script>
+  
+    <script src="/packages/hint.js"></script>
+  
+    <script src="/packages/mark.js"></script>
+  
+    <script src="/packages/selection.js"></script>
+  
+    <script src="/packages/mouse.js"></script>
+  
+    <script src="/packages/clipboard.js"></script>
+  
+    <script src="/packages/scroll.js"></script>
+  
+    <script src="/packages/player.js"></script>
+  
+    <script src="/packages/krabby.js"></script>
+  
+    <script src="/config.js"></script>
+  
+  
+  <script src="https://kit.fontawesome.com/b030fd7e2d.js" crossorigin="anonymous"></script>
+  
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" rel="stylesheet">
+</head>
+
+  <body>
+    <div id="header">
+      <header>
+  <a href="/">alexherbo2</a>
+</header>
+
+      <nav>
+  <ul>
+    
+      <li>
+        <a href="/blog">Blog</a>
+      </li>
+    
+      <li>
+        <a href="/citations">Citations</a>
+      </li>
+    
+      <li>
+        <a href="/config">Config</a>
+      </li>
+    
+      <li>
+        <a href="/projects">Projects</a>
+      </li>
+    
+      <li>
+        <a href="/wiki">Wiki</a>
+      </li>
+    
+  </ul>
+</nav>
+
+    </div>
+    <hr class="top">
+    <main>
+      
+  
+  
+  <div id="heading">
+    <div class="wrap">
+      <h1><a href="https://alexherbo2.github.io/wiki/exherbo/install-guide/">Exherbo – Installation Guide</a></h1>
+      <ul class="icons">
+        
+        
+          <li>
+            <a title="Raw" href="https://github.com/alexherbo2/website/raw/master/content/wiki/exherbo/install-guide.md"><i class="far fa-file"></i></a>
+          </li>
+        
+        
+          <li>
+            <a title="March 13, 2021" href="https://github.com/alexherbo2/website/commits/master/content/wiki/exherbo/install-guide.md"><i class="fab fa-git-square"></i></a>
+          </li>
+        
+        
+          <li>
+            <a title="Suggest an edit" href="https://github.com/alexherbo2/website/edit/master/content/wiki/exherbo/install-guide.md"><i class="fas fa-pen-square"></i></a>
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="date">
+        
+          <p>Posted on <time class="relative" datetime="2013-03-14 00:00:00 &#43;0000 UTC">March 14, 2013</time> (↻ <time class="relative" datetime="March 13, 2021">March 13, 2021</time>).</p>
+        
+      </div>
+    
+  </div>
+  <div class="invisible">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#1-read-the-documentation">1. Read the documentation</a></li>
+    <li><a href="#2-boot-a-live-system">2. Boot a live system</a></li>
+    <li><a href="#3-prepare-the-hard-disk">3. Prepare the hard disk</a></li>
+    <li><a href="#4-chroot-into-the-system">4. Chroot into the system</a></li>
+    <li><a href="#5-update-the-install">5. Update the install</a></li>
+    <li><a href="#6-make-it-bootable">6. Make it bootable</a></li>
+    <li><a href="#7-post-installation-tasks">7. Post-installation tasks</a></li>
+    <li><a href="#8-configuring-your-desktop">8. Configuring your desktop</a>
+      <ul>
+        <li><a href="#power-keys">Power keys</a></li>
+        <li><a href="#editor">Editor</a></li>
+        <li><a href="#shell">Shell</a></li>
+        <li><a href="#networking">Networking</a></li>
+        <li><a href="#sound">Sound</a></li>
+        <li><a href="#window-manager">Window manager</a></li>
+        <li><a href="#fonts">Fonts</a></li>
+        <li><a href="#browsing">Browsing</a></li>
+      </ul>
+    </li>
+    <li><a href="#9-useful-commands">9. Useful commands</a>
+      <ul>
+        <li><a href="#uninstall-a-package">Uninstall a package</a></li>
+        <li><a href="#updating-the-system">Updating the system</a></li>
+        <li><a href="#show-the-dependencies-of-a-package">Show the dependencies of a package</a></li>
+        <li><a href="#print-the-contents-of-a-package">Print the contents of a package</a></li>
+      </ul>
+    </li>
+    <li><a href="#10-creating-your-own-packages">10. Creating your own packages</a></li>
+    <li><a href="#11-share-your-configuration">11. Share your configuration</a></li>
+    <li><a href="#12-contributing">12. Contributing</a></li>
+  </ul>
+</nav>
+  </div>
+  <div id="context-navigation">
+    <a><i class="fas fa-angle-up"></i></a>
+  </div>
+  <h2 id="about">About</h2>
+<ul>
+<li>Source-based Linux distribution.</li>
+<li>Decentralized development.
+<ul>
+<li>Writing your own packages, adding and modifying those from others is easy.</li>
+</ul>
+</li>
+<li>For developers.
+<ul>
+<li>Developing on a specific version of a program is easy.</li>
+</ul>
+</li>
+<li>Uses <a href="https://paludis.exherbo.org">Paludis</a> package manager.</li>
+</ul>
+<script>
+  DOMContentLoaded = (event) => {
+    const tableOfContents = document.querySelector('#TableOfContents')
+    if (tableOfContents) {
+      const node = document.querySelector('#table-of-contents')
+      node.replaceWith(tableOfContents)
+    }
+    const content = document.querySelector('main')
+    const headings = content.querySelectorAll('h1[id], h2[id], h3[id], h4[id]')
+    for (const heading of headings) {
+      if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) {
+        const item = tableOfContents.querySelector(`[href="#${heading.id}"]`)
+        if (item) {
+          item.parentElement.remove()
+        }
+      }
+    }
+  }
+  document.addEventListener('DOMContentLoaded', DOMContentLoaded)
+</script>
+
+<h2>Table of Contents</h2>
+<div id="table-of-contents"></div>
+
+<h2 id="1-read-the-documentation">1. Read the documentation</h2>
+<ul>
+<li>Read the official documentation and <a href="https://exherbo.org/docs/install-guide.html">install guide</a> on <a href="https://exherbo.org">Exherbo</a> and <a href="https://paludis.exherbo.org">Paludis</a>.</li>
+<li>Join <a href="irc://chat.freenode.net/exherbo">#exherbo</a> for help.</li>
+</ul>
+<h2 id="2-boot-a-live-system">2. Boot a live system</h2>
+<p><a href="http://releases.ubuntu.com">Get Ubuntu</a> (or any distribution if you are not on Linux already) and verify the integrity of the ISO.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl <span style="color:#f92672">[</span>--remote-name -O<span style="color:#f92672">]</span> http://releases.ubuntu.com/disco/ubuntu-19.04-desktop-amd64.iso
+curl --remote-name http://releases.ubuntu.com/disco/SHA256SUMS
+</code></pre></div><p>Verify the integrity of the ISO:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">grep ubuntu-19.04-desktop-amd64.iso SHA256SUMS | shasum <span style="color:#f92672">[</span>--algorithm -a<span style="color:#f92672">]</span> <span style="color:#ae81ff">256</span> <span style="color:#f92672">[</span>--check -c<span style="color:#f92672">]</span>
+</code></pre></div><p>Then write Ubuntu on your USB stick (be careful, it’s <code>/dev/sdb</code> in my case).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>ubuntu-19.04-desktop-amd64.iso of<span style="color:#f92672">=</span>/dev/sdb
+</code></pre></div><p>Boot Ubuntu then you’re ready for the next step.</p>
+<h2 id="3-prepare-the-hard-disk">3. Prepare the hard disk</h2>
+<p>Wipe the file system:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">wipefs <span style="color:#f92672">[</span>--all -a<span style="color:#f92672">]</span> /dev/sda
+</code></pre></div><p>Create the partitions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">fdisk /dev/sda
+<span style="color:#75715e"># Boot (EFI):</span>
+<span style="color:#75715e"># Press &#39;n&#39; for new partition</span>
+<span style="color:#75715e"># – Partition type: &#39;p&#39; for primary – should be default</span>
+<span style="color:#75715e"># – Partition number: 1 – should be default</span>
+<span style="color:#75715e"># – First sector: Use default</span>
+<span style="color:#75715e"># – Last sector: +512M</span>
+<span style="color:#75715e"># Press &#39;t&#39; to change partition type</span>
+<span style="color:#75715e"># – Partition number: 1 – should be default</span>
+<span style="color:#75715e"># – Partition type: 1 for EFI System</span>
+<span style="color:#75715e"># Root:</span>
+<span style="color:#75715e"># Press &#39;n&#39; for new partition</span>
+<span style="color:#75715e"># – Partition type: &#39;p&#39; for primary – should be default</span>
+<span style="color:#75715e"># – Partition number: 2 – should be default</span>
+<span style="color:#75715e"># – First sector: Use default</span>
+<span style="color:#75715e"># – Last sector: Use default</span>
+<span style="color:#75715e"># Press &#39;w&#39; to save and exit</span>
+</code></pre></div><p>Format and label the file systems for each partition:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mkfs.fat -F <span style="color:#ae81ff">32</span> /dev/sda1 -n EFI <span style="color:#75715e"># Boot (EFI)</span>
+fatlabel /dev/sda1 EFI <span style="color:#75715e"># Optional, to label a FAT disk after its creation</span>
+mkfs.ext4 /dev/sda2 -L Exherbo <span style="color:#75715e"># Root</span>
+e2label /dev/sda2 Exherbo <span style="color:#75715e"># Optional, to label an ext disk after its creation</span>
+</code></pre></div><p>Mount the root partition and navigate to it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mount /dev/disk/by-label/Exherbo /mnt/exherbo
+cd /mnt/exherbo
+</code></pre></div><p>Get the latest archive of Exherbo from <a href="http://dev.exherbo.org/stages/">Stages</a> and verify the consistence of the file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl --remote-name http://dev.exherbo.org/stages/exherbo-x86_64-pc-linux-gnu-current.tar.xz
+curl --remote-name http://dev.exherbo.org/stages/sha256sum
+grep exherbo-x86_64-pc-linux-gnu-current.tar.xz sha256sum | shasum --algorithm <span style="color:#ae81ff">256</span> --check
+</code></pre></div><p>Extract the stage:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">unxz <span style="color:#f92672">[</span>--to-stdout -c<span style="color:#f92672">]</span> exherbo-x86_64-pc-linux-gnu-current.tar.xz |
+tar <span style="color:#f92672">[</span>--extract -x<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--preserve-permissions -p<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--preserve-order -s<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--file -f<span style="color:#f92672">]</span> -
+</code></pre></div><p>Update <code>/mnt/exherbo/etc/fstab</code>:</p>
+<p><code>/mnt/exherbo/etc/fstab</code></p>
+<pre><code># FILE SYSTEM MOUNT POINT TYPE OPTIONS DUMP PASS
+/dev/disk/by-label/Exherbo / ext4 defaults 0 0
+/dev/disk/by-label/EFI /boot vfat defaults 0 0
+</code></pre><h2 id="4-chroot-into-the-system">4. Chroot into the system</h2>
+<p>Make sure the network can resolve DNS:</p>
+<p><code>/mnt/exherbo/etc/resolv.conf</code></p>
+<pre><code># Google DNS
+# https://developers.google.com/speed/public-dns/docs/using
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+</code></pre><p>Spawn Exherbo namespace container with <a href="https://freedesktop.org/software/systemd/man/systemd-nspawn.html"><code>systemd-nspawn</code></a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">systemd-nspawn
+</code></pre></div><p>Or mount everything for the chroot manually:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mount <span style="color:#f92672">[</span>--options -o<span style="color:#f92672">]</span> rbind /dev /mnt/exhero/dev
+mount --options bind /sys /mnt/exherbo/sys
+mount <span style="color:#f92672">[</span>--types -t<span style="color:#f92672">]</span> proc none /mnt/exherbo/proc
+mount /dev/disk/by-label/EFI /mnt/exherbo/boot
+env <span style="color:#f92672">[</span>--ignore-environment -i<span style="color:#f92672">]</span> TERM<span style="color:#f92672">=</span>$TERM SHELL<span style="color:#f92672">=</span>/bin/bash HOME<span style="color:#f92672">=</span>$HOME <span style="color:#66d9ef">$(</span>which chroot<span style="color:#66d9ef">)</span> /mnt/exherbo /bin/bash
+</code></pre></div><p>Then when in Exherbo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">source /etc/profile
+PS1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;(Exherbo) </span>$PS1<span style="color:#e6db74">&#34;</span>
+</code></pre></div><h2 id="5-update-the-install">5. Update the install</h2>
+<p>Make sure Paludis is configured correctly:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vi /etc/paludis/bashrc /etc/paludis/*.conf
+</code></pre></div><p>Sync all the trees – now it is safe to sync:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave sync
+</code></pre></div><p>You may want to re-install the packages included in the stage:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve <span style="color:#f92672">[</span>--execute -x<span style="color:#f92672">]</span> world
+</code></pre></div><h2 id="6-make-it-bootable">6. Make it bootable</h2>
+<p>Clone the <a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git">stable kernel</a> on <a href="https://kernel.org">Linux</a> and navigate to it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux /kernel
+cd /kernel
+</code></pre></div><p>Switch to the latest stable kernel:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout tags/v5.0.7 <span style="color:#75715e"># 5.0.7 in my case</span>
+</code></pre></div><p>Configure and install the kernel:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">make nconfig
+make <span style="color:#75715e"># Compile kernel to arch/x86/boot/bzImage</span>
+make modules_install
+</code></pre></div><p>Make sure to re-install <a href="https://freedesktop.org/wiki/Software/systemd/"><code>systemd</code></a> in order to create a valid <a href="https://freedesktop.org/software/systemd/man/machine-id.html"><code>machine-id</code></a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve --execute <span style="color:#f92672">[</span>--preserve-world -1<span style="color:#f92672">]</span> --skip-phase test sys-apps/systemd
+</code></pre></div><p>Install <a href="https://freedesktop.org/wiki/Software/systemd/systemd-boot/"><code>systemd-boot</code></a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">bootctl install
+</code></pre></div><p>You have to install <a href="https://git.exherbo.org/summer/packages/sys-apps/systemd/"><code>sys-apps/systemd</code></a> with the <code>efi</code> option enabled to use this command.</p>
+<p>Open <code>/etc/paludis/options.conf</code> and add:</p>
+<p><code>/etc/paludis/options.conf</code></p>
+<pre><code>sys-apps/systemd efi
+</code></pre><p>Copy the kernel you just installed into the appropriate directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kernel-install add 5.0.7 /boot/vmlinuz-5.0.7
+</code></pre></div><p>To remove old kernel versions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kernel-install remove <span style="color:#f92672">{</span>kernel-version<span style="color:#f92672">}</span>
+</code></pre></div><p>Configure your hostname for <code>systemd</code>:</p>
+<p><code>/etc/hostname</code></p>
+<pre><code>kanto
+</code></pre><p>Make sure your hostname is mapped to <code>localhost</code> in <code>/etc/hosts</code>,
+otherwise some packages test suites will fail because of network sandboxing.</p>
+<p><code>/etc/hosts</code></p>
+<pre><code>127.0.0.1 localhost kanto
+::1 localhost kanto
+</code></pre><p>If you need additional kernel support e.g. for an Intel wireless card,
+install the Linux firmware files.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve --execute firmware/linux-firmware
+</code></pre></div><p>Set root password:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">passwd
+</code></pre></div><p>Configure locales:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">localdef <span style="color:#f92672">[</span>--inputfile -i<span style="color:#f92672">]</span> en_US <span style="color:#f92672">[</span>--charmap -f<span style="color:#f92672">]</span> UTF-8 en_US.UTF-8
+</code></pre></div><p><code>/etc/locale.conf</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">LANG<span style="color:#f92672">=</span>en_US.UTF-8
+</code></pre></div><p>Set the time-zone:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ln <span style="color:#f92672">[</span>--symbolic -s<span style="color:#f92672">]</span> /usr/share/zoneinfo/Europe/Paris /etc/localtime
+</code></pre></div><p>Sync hardware clock &lsquo;aka BIOS&rsquo; with the current system time.</p>
+<pre><code>hwclock [--systohc -w] [--utc -u]
+</code></pre><p>Reboot:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">reboot
+</code></pre></div><h2 id="7-post-installation-tasks">7. Post-installation tasks</h2>
+<p>Remove the stage tarball:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">rm /exherbo-x86_64-pc-linux-gnu-current.tar.xz
+</code></pre></div><p>The installation images (stages) contain additional tools which are useful
+for the installation process but are not part of the system nor world sets
+but the stages set.</p>
+<p>You can identify the additional packages using <a href="https://paludis.exherbo.org/clients/cave-show.html"><code>cave show</code></a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave show stages
+</code></pre></div><p>If you wish to remove them, you can simply use <a href="https://paludis.exherbo.org/clients/cave-purge.html"><code>cave purge</code></a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave purge
+</code></pre></div><p>Alternatively, you can add packages you wish to retain to the world set by using
+the <a href="https://paludis.exherbo.org/clients/cave-update-world.html"><code>update-world</code></a> command.  As an example, the following
+adds <a href="https://git.exherbo.org/summer/packages/sys-devel/gdb/"><code>sys-devel/gdb</code></a> to the world set:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave update-world sys-devel/gdb
+</code></pre></div><p>If you want to add all packages of the stages to the world set:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave update-world <span style="color:#f92672">[</span>--set -s<span style="color:#f92672">]</span> stages
+</code></pre></div><p>Add a new user for daily use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">useradd <span style="color:#f92672">[</span>--create-home -m<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--groups -G<span style="color:#f92672">]</span> adm,disk,wheel,cdrom,audio,video,usb,users taupiqueur
+</code></pre></div><p>To add groups:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">usermod <span style="color:#f92672">[</span>--append -a<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--groups -G<span style="color:#f92672">]</span> <span style="color:#f92672">{</span>groups<span style="color:#f92672">}</span> taupiqueur
+</code></pre></div><p>Set user password:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">passwd taupiqueur
+</code></pre></div><p>Install <a href="https://git.exherbo.org/summer/packages/app-admin/sudo/"><code>app-admin/sudo</code></a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve --execute app-admin/sudo
+</code></pre></div><p>Allow members of <code>wheel</code> to execute <code>sudo</code> with no password:</p>
+<p><code>/etc/sudoers</code></p>
+<pre><code>%wheel ALL=(ALL) NOPASSWD: ALL
+</code></pre><h2 id="8-configuring-your-desktop">8. Configuring your desktop</h2>
+<h3 id="power-keys">Power keys</h3>
+<p>By default, closing the lid suspends your computer and pressing the power key
+powers off it.  Just fix that, by opening <a href="https://freedesktop.org/wiki/Software/systemd/logind/"><code>logind</code></a> configuration:</p>
+<p><code>/etc/systemd/logind.conf</code></p>
+<pre><code>[Login]
+HandleLidSwitch=ignore
+HandlePowerKey=hibernate
+HandleSuspendKey=suspend
+HandleHibernateKey=hibernate
+</code></pre><p>Take your changes into account:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">systemctl restart systemd-logind
+</code></pre></div><h3 id="editor">Editor</h3>
+<p>Install <a href="https://kakoune.org">Kakoune</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve --execute app-editors/kakoune
+</code></pre></div><p>You will be tell Kakoune is <a href="https://exherbo.org/docs/faq.html#masked_by_unavailable">masked by unavailable</a>, which means the package
+comes from an <a href="https://git.exherbo.org/summer/">unavailable-unofficial</a> repository.</p>
+<p>Let’s add the repository:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve --execute repository/mawww
+</code></pre></div><p>The command will install <a href="https://github.com/mawww/mawww"><code>mawww</code></a> in <code>/etc/paludis/repositories/mawww.conf</code>
+and populate the contents with <code>/etc/paludis/repository.template</code>.</p>
+<h3 id="shell">Shell</h3>
+<p>Install <a href="https://nushell.sh">Nushell</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve --execute app-shells/nu
+</code></pre></div><p>You can also change your default shell, but it may be risky to log in a custom shell.</p>
+<p>If you want it, first add the full path of Nushell to <code>/etc/shells</code>:</p>
+<p><code>/etc/shells</code></p>
+<pre><code>/bin/nu
+</code></pre><p>Then change your shell with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chsh <span style="color:#f92672">[</span>--shell -s<span style="color:#f92672">]</span> /bin/nu
+</code></pre></div><h3 id="networking">Networking</h3>
+<p>Install network tools:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve --execute sys-apps/iproute2
+cave resolve --execute net-wireless/wireless_tools
+</code></pre></div><p>Install <a href="https://wiki.gnome.org/Projects/NetworkManager">NetworkManager</a> and its applet:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve --execute net-apps/NetworkManager
+cave resolve --execute gnome-desktop/gnome-keyring
+cave resolve --execute gnome-desktop/network-manager-applet
+</code></pre></div><h3 id="sound">Sound</h3>
+<p>Install <a href="https://alsa-project.org">ALSA</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve --execute sys-sound/alsa-utils
+</code></pre></div><p>Install <a href="https://freedesktop.org/wiki/Software/PulseAudio/">PulseAudio</a> and its applet:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve --execute media-sound/pulseaudio
+cave resolve --execute media-sound/pulseaudio-applet
+</code></pre></div><p>Install the graphical volume control:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve --execute media-sound/pavucontrol
+</code></pre></div><p>Enable PulseAudio:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">systemctl --user enable --now pulseaudio
+</code></pre></div><h3 id="window-manager">Window manager</h3>
+<p>Install <a href="https://x.org">X</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve --execute x11-server/xorg-server
+</code></pre></div><p>If you need additional <a href="https://git.exherbo.org/summer/packages/x11-drivers/"><code>x11-drivers</code></a> e.g. Intel:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave search x11-drivers/xf86-video
+<span style="color:#75715e"># …</span>
+<span style="color:#75715e"># x11-drivers/xf86-video-intel</span>
+<span style="color:#75715e"># …</span>
+cave resolve --execute x11-drivers/xf86-video-intel
+</code></pre></div><p>Install <a href="https://i3wm.org">i3</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve --execute x11-wm/i3
+</code></pre></div><p>For other <a href="https://git.exherbo.org/summer/packages/x11-apps/"><code>x11-apps</code></a> or <a href="https://git.exherbo.org/summer/packages/x11-utils/"><code>x11-utils</code></a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave search x11-apps/<span style="color:#f92672">{</span>package-name<span style="color:#f92672">}</span>
+cave search x11-utils/<span style="color:#f92672">{</span>package-name<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="fonts">Fonts</h3>
+<p>Install DejaVu fonts:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve --execute fonts/dejavu
+</code></pre></div><p>Disable bitmap fonts:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
+</code></pre></div><h3 id="browsing">Browsing</h3>
+<p>Install <a href="https://chromium.org">Chromium</a>:</p>
+<pre><code>cave resolve --execute net-www/chromium-stable
+</code></pre><p>Set Chromium as the default browser:</p>
+<p><code>~/.config/mimeapps.list</code></p>
+<pre><code>[Default Applications]
+text/html=chromium-browser.desktop
+x-scheme-handler/http=chromium-browser.desktop
+x-scheme-handler/https=chromium-browser.desktop
+</code></pre><p>If you wish a test, try:</p>
+<pre><code>xdg-open https://exherbo.org
+</code></pre><h2 id="9-useful-commands">9. Useful commands</h2>
+<h3 id="uninstall-a-package">Uninstall a package</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve !<span style="color:#f92672">{</span>package-name<span style="color:#f92672">}</span>
+</code></pre></div><p>You can also edit your <code>/etc/paludis/world</code> and <code>cave resolve world</code> to update.</p>
+<h3 id="updating-the-system">Updating the system</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave resolve world
+  <span style="color:#f92672">[</span>--complete -c<span style="color:#f92672">]</span>
+  <span style="color:#f92672">[</span>--preserve-world -1<span style="color:#f92672">]</span>
+  <span style="color:#f92672">[</span>--continue-on-failure -C<span style="color:#f92672">]</span> <span style="color:#f92672">[</span><span style="color:#66d9ef">if</span>-satisfied s<span style="color:#f92672">]</span>
+  <span style="color:#f92672">[</span>--keep -k<span style="color:#f92672">]</span> <span style="color:#f92672">[</span><span style="color:#66d9ef">if</span>-same-metadata m<span style="color:#f92672">]</span>
+  <span style="color:#f92672">[</span>--keep-targets -K<span style="color:#f92672">]</span> <span style="color:#f92672">[</span><span style="color:#66d9ef">if</span>-same-metadata m<span style="color:#f92672">]</span>
+</code></pre></div><p>Taken from <a href="http://blog.clement.delafargue.name/posts/2012-10-26-my-everyday-exherbo-commands.html">Clément Delafargue – My everyday Exherbo commands</a>.</p>
+<h3 id="show-the-dependencies-of-a-package">Show the dependencies of a package</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave show <span style="color:#f92672">[</span>--complex-keys -c<span style="color:#f92672">]</span> <span style="color:#f92672">{</span>package-name<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="print-the-contents-of-a-package">Print the contents of a package</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave print-id-contents <span style="color:#f92672">{</span>package-name<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="10-creating-your-own-packages">10. Creating your own packages</h2>
+<ul>
+<li>Read the official documentation on <a href="https://exherbo.com/docs/eapi/exheres-for-smarties.html">Exheres for Smarties</a>.</li>
+<li>Take example on existing repositories e.g. <a href="https://github.com/mawww/mawww">mawww</a>,
+<a href="https://github.com/sardemff7/sardemff7-exheres">Sardem FF7</a> or <a href="https://github.com/alexherbo2/exheres">mine</a>.</li>
+</ul>
+<p>To start, create a new repository to hold the package’s files.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git init exheres
+cd exheres
+</code></pre></div><p>Create the following files:</p>
+<p><code>profiles/repo_name</code></p>
+<pre><code>alexherbo2
+</code></pre><p><code>metadata/about.conf</code></p>
+<pre><code>homepage = https://github.com/alexherbo2/exheres
+summary = alexherbo2’s supplemental repository
+description = alexherbo2’s tasty exhereses
+owner = alexherbo2 &lt;alexherbo2@gmail.com&gt;
+status = third-party
+</code></pre><p><code>metadata/layout.conf</code></p>
+<pre><code>layout = exheres
+eapi_when_unknown = exheres-0
+eapi_when_unspecified = exheres-0
+profile_eapi_when_unspecified = exheres-0
+masters = arbor
+</code></pre><p>Create your first package.  As an example, we’ll create <code>app-editors/kakoune</code>.</p>
+<p><code>packages/app-editors/kakoune/kakoune-scm.exheres-0</code></p>
+<pre><code>SUMMARY='mawww’s experiment for a better code editor'
+HOMEPAGE='https://kakoune.org'
+
+require kakoune
+
+LICENSES='Unlicense'
+PLATFORMS='~amd64 ~x86'
+</code></pre><p><code>metadata/categories.conf</code></p>
+<pre><code>app-editors
+</code></pre><p><code>metadata/repository_mask.conf</code></p>
+<pre><code>app-editors/kakoune[~scm] [[
+  author = [ alexherbo2 &lt;alexherbo2@gmail.com&gt; ]
+  date = [ 04 Apr 2019 ]
+  token = scm
+  description = [ Mask -scm version ]
+]]
+</code></pre><p>Update your Paludis configuration to include your repository:</p>
+<p><code>/etc/paludis/repositories/alexherbo2.conf</code></p>
+<pre><code>format = e
+location = /var/db/paludis/repositories/alexherbo2
+sync = git+https://github.com/alexherbo2/exheres
+</code></pre><p>Finally, sync the trees:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cave sync
+</code></pre></div><h2 id="11-share-your-configuration">11. Share your configuration</h2>
+<p>Because it’s always worth to see how others configure things e.g.
+<a href="https://github.com/Keruspe/paludis-config">Keruspe</a> or <a href="https://github.com/alexherbo2/paludis">me</a>.</p>
+<h2 id="12-contributing">12. Contributing</h2>
+<ul>
+<li>Read <a href="https://exherbo.org/docs/workflow.html">Workflow</a>.</li>
+</ul>
+<p>Repositories are configured as normal, with their <code>sync</code> set to point to the
+usual remote location.  In addition, for any repository you are going to work
+on, you use a sync suffix to specify a local path too.  For example:</p>
+<p><code>/etc/paludis/repositories/arbor.conf</code></p>
+<pre><code>sync = git+https://git.exherbo.org/git/arbor.git local: git+file:///home/taupiqueur/exherbo/exheres/arbor
+</code></pre><p>Where <code>~/exherbo/exheres/arbor</code> is a personal copy of the repository.</p>
+<p>Normally, when you sync, you’ll be syncing against upstream.  But when you want
+to do some work:</p>
+<p>Clone the repository:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone git://git.exherbo.org/arbor.git ~/exherbo/exheres/arbor
+</code></pre></div><p>Work on and commit your changes.</p>
+<p>Sync the local repository rather than the upstream:</p>
+<pre><code>cave sync [--source -s] local [--revision -r] {commit-id} arbor
+</code></pre><p>Test your changes.</p>
+<p>Push your changes to <a href="https://gitlab.exherbo.org">GitLab</a>.
+See the <a href="https://exherbo.org/docs/gitlab.html">documentation</a> for more information.</p>
+<p><a href="https://gitlab.exherbo.org/users/sign_in">Create an account</a> on the GitLab instance.</p>
+<p>Add your <a href="https://gitlab.exherbo.org/profile/keys">SSH key</a> for easier pushing via SSH instead of HTTPS.</p>
+<p>Fork <a href="https://gitlab.exherbo.org/exherbo/arbor"><code>arbor</code></a>.</p>
+<p>Clone your fork of it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone git@gitlab.exherbo.org:alexherbo2/arbor.git
+</code></pre></div><p>If you already cloned the repo you can add your fork as remote:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git remote set-url origin git@gitlab.exherbo.org:alexherbo2/arbor.git
+git remote add upstream https://gitlab.exherbo.org/exherbo/arbor.git
+</code></pre></div><p>Push your changes.</p>
+<p>Create a new <a href="https://gitlab.exherbo.org/exherbo/arbor/merge_requests">pull request</a>.</p>
+<p>Go back to syncing without the suffix.</p>
+
+
+    </main>
+    <hr class="bottom">
+    <footer>
+  <ul class="social">
+    
+      <li>
+        <a href="https://github.com/alexherbo2">GitHub</a>
+      </li>
+    
+      <li>
+        <a href="https://instagram.com/alexherbo2">Instagram</a>
+      </li>
+    
+      <li>
+        <a href="https://youtube.com/channel/UCv9nzkds34PnGOu6u_QvVBQ">YouTube</a>
+      </li>
+    
+  </ul>
+  <ul class="credits">
+    
+      <li>
+        Hosted on <a href="https://github.com/alexherbo2/website">GitHub</a>
+      </li>
+    
+    <li>
+      Powered by <a href="https://gohugo.io">Hugo</a>
+    </li>
+    <li>
+      Theme from <a href="http://stevelosh.com">Steve Losh</a>
+    </li>
+  </ul>
+</footer>
+
+  </body>
+</html>

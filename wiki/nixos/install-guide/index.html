@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>NixOS – Installation Guide · alexherbo2</title>
+  
+    <meta name="description" content="The steps I followed to install and configure NixOS">
+  
+  
+  
+    <link href="https://github.com/favicon.ico" rel="icon">
+  
+  
+  
+    <link href="/css/main.css" rel="stylesheet">
+  
+    <link href="/packages/selection.css" rel="stylesheet">
+  
+    <link href="/packages/krabby.css" rel="stylesheet">
+  
+  
+  
+    <script src="/js/main.js"></script>
+  
+    <script src="/packages/modal.js"></script>
+  
+    <script src="/packages/mouse-selection.js"></script>
+  
+    <script src="/packages/prompt.js"></script>
+  
+    <script src="/packages/hint.js"></script>
+  
+    <script src="/packages/mark.js"></script>
+  
+    <script src="/packages/selection.js"></script>
+  
+    <script src="/packages/mouse.js"></script>
+  
+    <script src="/packages/clipboard.js"></script>
+  
+    <script src="/packages/scroll.js"></script>
+  
+    <script src="/packages/player.js"></script>
+  
+    <script src="/packages/krabby.js"></script>
+  
+    <script src="/config.js"></script>
+  
+  
+  <script src="https://kit.fontawesome.com/b030fd7e2d.js" crossorigin="anonymous"></script>
+  
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" rel="stylesheet">
+</head>
+
+  <body>
+    <div id="header">
+      <header>
+  <a href="/">alexherbo2</a>
+</header>
+
+      <nav>
+  <ul>
+    
+      <li>
+        <a href="/blog">Blog</a>
+      </li>
+    
+      <li>
+        <a href="/citations">Citations</a>
+      </li>
+    
+      <li>
+        <a href="/config">Config</a>
+      </li>
+    
+      <li>
+        <a href="/projects">Projects</a>
+      </li>
+    
+      <li>
+        <a href="/wiki">Wiki</a>
+      </li>
+    
+  </ul>
+</nav>
+
+    </div>
+    <hr class="top">
+    <main>
+      
+  
+  
+  <div id="heading">
+    <div class="wrap">
+      <h1><a href="https://alexherbo2.github.io/wiki/nixos/install-guide/">NixOS – Installation Guide</a></h1>
+      <ul class="icons">
+        
+        
+          <li>
+            <a title="Raw" href="https://github.com/alexherbo2/website/raw/master/content/wiki/nixos/install-guide.md"><i class="far fa-file"></i></a>
+          </li>
+        
+        
+          <li>
+            <a title="September 15, 2020" href="https://github.com/alexherbo2/website/commits/master/content/wiki/nixos/install-guide.md"><i class="fab fa-git-square"></i></a>
+          </li>
+        
+        
+          <li>
+            <a title="Suggest an edit" href="https://github.com/alexherbo2/website/edit/master/content/wiki/nixos/install-guide.md"><i class="fas fa-pen-square"></i></a>
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="date">
+        
+          <p>Posted on <time class="relative" datetime="2018-09-13 00:00:00 &#43;0000 UTC">September 13, 2018</time> (↻ <time class="relative" datetime="September 15, 2020">September 15, 2020</time>).</p>
+        
+      </div>
+    
+  </div>
+  <div class="invisible">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#1-obtaining-nixos">1. <a href="https://nixos.org/nixos/manual#sec-obtaining">Obtaining NixOS</a></a></li>
+    <li><a href="#2-booting-the-system">2. <a href="https://nixos.org/nixos/manual#sec-installation-booting">Booting the system</a></a></li>
+    <li><a href="#3-partitioning-and-formatting">3. <a href="https://nixos.org/nixos/manual#sec-installation-partitioning">Partitioning and formatting</a></a>
+      <ul>
+        <li><a href="#option-1-gparted">Option 1: <a href="https://gparted.org">GParted</a></a></li>
+        <li><a href="#option-2-gpt-fdisk">Option 2: <a href="https://rodsbooks.com/gdisk/">GPT fdisk</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#4-installing">4. <a href="https://nixos.org/nixos/manual#sec-installation-installing">Installing</a></a></li>
+    <li><a href="#5-changing-the-configuration">5. <a href="https://nixos.org/nixos/manual#sec-changing-config">Changing the Configuration</a></a>
+      <ul>
+        <li><a href="#packages"><a href="https://nixos.org/nixos/packages.html">Packages</a></a></li>
+        <li><a href="#options"><a href="https://nixos.org/nixos/options.html">Options</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#6-upgrading-nixos">6. <a href="https://nixos.org/nixos/manual#sec-upgrading">Upgrading NixOS</a></a></li>
+    <li><a href="#7-cleaning-the-nix-store">7. <a href="https://nixos.org/nixos/manual#sec-nix-gc">Cleaning the Nix Store</a></a></li>
+    <li><a href="#8-package-management">8. <a href="https://nixos.org/nixos/manual#sec-package-management">Package Management</a></a>
+      <ul>
+        <li><a href="#customising-packages"><a href="https://nixos.org/nixos/manual#sec-customising-packages">Customising Packages</a></a></li>
+        <li><a href="#adding-custom-packages"><a href="https://nixos.org/nixos/manual#sec-custom-packages">Adding Custom Packages</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#9-developing">9. Developing</a>
+      <ul>
+        <li><a href="#support-for-specific-programming-languages-and-frameworks"><a href="https://nixos.org/nixpkgs/manual#chap-language-support">Support for specific programming languages and frameworks</a></a></li>
+        <li><a href="#i-installed-a-library-but-my-compiler-is-not-finding-it--why"><a href="https://nixos.wiki/wiki/FAQ#I_installed_a_library_but_my_compiler_is_not_finding_it._Why.3F">I installed a library but my compiler is not finding it.  Why?</a></a></li>
+        <li><a href="#im-working-on-a-new-package-how-can-i-build-it-without-adding-it-to-nixpkgs"><a href="https://nixos.wiki/wiki/FAQ#I.27m_working_on_a_new_package.2C_how_can_I_build_it_without_adding_it_to_nixpkgs.3F">I’m working on a new package, how can I build it without adding it to nixpkgs?</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#10-faq">10. <a href="https://nixos.wiki/wiki/FAQ">FAQ</a></a></li>
+  </ul>
+</nav>
+  </div>
+  <div id="context-navigation">
+    <a><i class="fas fa-angle-up"></i></a>
+  </div>
+  <h2 id="about">About</h2>
+<ul>
+<li>Purely functional Linux distribution.</li>
+<li>Uses <a href="https://nixos.org/nix/">Nix</a> package manager.</li>
+</ul>
+<script>
+  DOMContentLoaded = (event) => {
+    const tableOfContents = document.querySelector('#TableOfContents')
+    if (tableOfContents) {
+      const node = document.querySelector('#table-of-contents')
+      node.replaceWith(tableOfContents)
+    }
+    const content = document.querySelector('main')
+    const headings = content.querySelectorAll('h1[id], h2[id], h3[id], h4[id]')
+    for (const heading of headings) {
+      if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) {
+        const item = tableOfContents.querySelector(`[href="#${heading.id}"]`)
+        if (item) {
+          item.parentElement.remove()
+        }
+      }
+    }
+  }
+  document.addEventListener('DOMContentLoaded', DOMContentLoaded)
+</script>
+
+<h2>Table of Contents</h2>
+<div id="table-of-contents"></div>
+
+<h2 id="1-obtaining-nixos">1. <a href="https://nixos.org/nixos/manual#sec-obtaining">Obtaining NixOS</a></h2>
+<p><a href="https://nixos.org/nixos/download.html">Get NixOS</a> and verify the integrity of the ISO.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">grep nixos-graphical-19.03.172138.5c52b25283a-x86_64-linux.iso nixos-graphical-19.03.172138.5c52b25283a-x86_64-linux.iso.sha256 | shasum <span style="color:#f92672">[</span>--algorithm -a<span style="color:#f92672">]</span> <span style="color:#ae81ff">256</span> <span style="color:#f92672">[</span>--check -c<span style="color:#f92672">]</span>
+</code></pre></div><h2 id="2-booting-the-system">2. <a href="https://nixos.org/nixos/manual#sec-installation-booting">Booting the system</a></h2>
+<p>Write NixOS on your USB stick (be careful, it’s <code>/dev/sdb</code> in my case).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>nixos-graphical-19.03.172138.5c52b25283a-x86_64-linux.iso of<span style="color:#f92672">=</span>/dev/sdb
+</code></pre></div><p>Boot NixOS then you’re ready for the next step.</p>
+<h2 id="3-partitioning-and-formatting">3. <a href="https://nixos.org/nixos/manual#sec-installation-partitioning">Partitioning and formatting</a></h2>
+<p>Wipe the file system:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">wipefs <span style="color:#f92672">[</span>--all -a<span style="color:#f92672">]</span> /dev/sda
+</code></pre></div><h3 id="option-1-gparted">Option 1: <a href="https://gparted.org">GParted</a></h3>
+<p>Create the partitions, formats and labels:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gparted
+</code></pre></div><p>You can use <a href="https://gparted.org">GParted</a> or <a href="https://rodsbooks.com/gdisk/">gdisk</a>, but I recommend GParted for discoverability.</p>
+<ol>
+<li>Create a GUID table: <em>Device</em> ❯ <em>Create Partition Table</em> ❯ <em>GPT</em></li>
+</ol>
+<ul>
+<li>Select <code>/dev/sda</code></li>
+<li>Entire disk</li>
+</ul>
+<ol start="2">
+<li>Create the boot partition: <em>Partition</em> ❯ <em>New</em></li>
+</ol>
+<ul>
+<li>Free space preceding (MiB): 1 (You cannot less; space assigned to GPT)</li>
+<li>New size (MiB): 512</li>
+<li>Free space following (MiB): Rest</li>
+<li>Align to: MiB</li>
+<li>Create as: Primary Partition</li>
+<li>Partition name: EFI</li>
+<li>File system: <code>fat32</code></li>
+<li>Label: EFI</li>
+</ul>
+<ol start="3">
+<li>Add the <code>boot</code> flag</li>
+</ol>
+<ul>
+<li>Right-click on <code>/dev/sda1</code> to manage flags</li>
+<li>Add the <code>boot</code> flag and enable <code>esp</code> (should be automatic with GPT)</li>
+</ul>
+<ol start="4">
+<li>Create the root partition: <em>Partition</em> ❯ <em>New</em></li>
+</ol>
+<ul>
+<li>Free space preceding (MiB): 0</li>
+<li>New size (MiB): Rest</li>
+<li>Free space following (MiB): 0</li>
+<li>Align to: MiB</li>
+<li>Create as: Primary Partition</li>
+<li>Partition name: NixOS</li>
+<li>File system: <code>ext4</code></li>
+<li>Label: NixOS</li>
+</ul>
+<ol start="5">
+<li>Apply modifications</li>
+</ol>
+<h3 id="option-2-gpt-fdisk">Option 2: <a href="https://rodsbooks.com/gdisk/">GPT fdisk</a></h3>
+<p>Create the partitions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gdisk /dev/sda
+<span style="color:#75715e"># GUID table:</span>
+<span style="color:#75715e"># Press &#39;o&#39; to create a new empty GUID partition table (GPT)</span>
+<span style="color:#75715e"># Boot (EFI):</span>
+<span style="color:#75715e"># Press &#39;n&#39; for new partition</span>
+<span style="color:#75715e"># – Partition number: 1 – should be default</span>
+<span style="color:#75715e"># – First sector: Use default</span>
+<span style="color:#75715e"># – Last sector: +512M</span>
+<span style="color:#75715e"># – Hex code: ef00 (EFI system partition)</span>
+<span style="color:#75715e"># Press &#39;c&#39; to change partition’s name</span>
+<span style="color:#75715e"># – Partition number: 1</span>
+<span style="color:#75715e"># – Partition name: EFI</span>
+<span style="color:#75715e"># Root:</span>
+<span style="color:#75715e"># Press &#39;n&#39; for new partition</span>
+<span style="color:#75715e"># – Partition number: 2 – should be default</span>
+<span style="color:#75715e"># – First sector: Use default</span>
+<span style="color:#75715e"># – Last sector: Use default</span>
+<span style="color:#75715e"># – Hex code: 8300 (Linux filesystem) – should be default</span>
+<span style="color:#75715e"># Press &#39;c&#39; to change partition’s name</span>
+<span style="color:#75715e"># – Partition number: 2</span>
+<span style="color:#75715e"># – Partition name: NixOS</span>
+<span style="color:#75715e"># Press &#39;w&#39; to write table to disk and exit</span>
+</code></pre></div><p>Format and label the file systems for each partition:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mkfs.fat -F <span style="color:#ae81ff">32</span> /dev/sda1 -n EFI <span style="color:#75715e"># Boot (EFI)</span>
+fatlabel /dev/sda1 EFI <span style="color:#75715e"># Optional, to label a FAT disk after its creation</span>
+mkfs.ext4 /dev/sda2 -L NixOS <span style="color:#75715e"># Root</span>
+e2label /dev/sda2 NixOS <span style="color:#75715e"># Optional, to label an ext disk after its creation</span>
+</code></pre></div><p><strong>Note</strong>: Many partitioning tools do not create filesystems; they just create the
+partitions in which filesystems can be created.  To create a filesystem, you need
+to use commands such as <code>mkfs</code>.</p>
+<h2 id="4-installing">4. <a href="https://nixos.org/nixos/manual#sec-installation-installing">Installing</a></h2>
+<p>Mount the root and boot partitions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mkdir /mnt/nixos
+mount /dev/disk/by-label/NixOS /mnt/nixos
+mkdir /mnt/nixos/boot
+mount /dev/disk/by-label/EFI /mnt/nixos/boot
+</code></pre></div><p>Generate an initial configuration:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nixos-generate-config --root /mnt/nixos
+<span style="color:#75715e"># /etc/nixos/configuration.nix</span>
+<span style="color:#75715e"># /etc/nixos/hardware-configuration.nix</span>
+</code></pre></div><p>Do the installation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nixos-install --root /mnt/nixos
+</code></pre></div><p>If everything went well:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">reboot
+</code></pre></div><h2 id="5-changing-the-configuration">5. <a href="https://nixos.org/nixos/manual#sec-changing-config">Changing the Configuration</a></h2>
+<p>The file <code>/etc/nixos/configuration.nix</code> contains the current configuration of your machine.
+Whenever you’ve <a href="https://nixos.org/nixos/manual#ch-configuration">changed something</a> in that file, you should do <code>nixos-rebuild switch</code> to switch to the new configuration.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nixos-rebuild switch
+</code></pre></div><p><strong>Warning</strong>: These commands must be executed as root, so you should either run them from a root shell or by prefixing them with <code>sudo [--login -i]</code>.</p>
+<p>You can check my configuration <a href="https://github.com/alexherbo2/configuration/blob/master/etc/nixos/configuration.nix">here</a>.</p>
+<h3 id="packages"><a href="https://nixos.org/nixos/packages.html">Packages</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nix search <span style="color:#f92672">[</span>package<span style="color:#f92672">]</span>
+</code></pre></div><h3 id="options"><a href="https://nixos.org/nixos/options.html">Options</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">man configuration.nix
+</code></pre></div><h2 id="6-upgrading-nixos">6. <a href="https://nixos.org/nixos/manual#sec-upgrading">Upgrading NixOS</a></h2>
+<p>When you first install NixOS, you’re automatically subscribed to the NixOS channel that corresponds to your installation source.
+For instance, if you installed from a 19.03 ISO, you will be subscribed to the <code>nixos-19.03</code> channel.
+To see which NixOS channel you’re subscribed to, run the following as root:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nix-channel --list
+<span style="color:#75715e"># nixos https://nixos.org/channels/nixos-19.03</span>
+</code></pre></div><p>If you want to live on the bleeding edge:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nix-channel --add https://nixos.org/channels/nixos-unstable nixos
+</code></pre></div><p>To upgrade NixOS:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nixos-rebuild switch --upgrade
+</code></pre></div><p>The command is equivalent to the more verbose:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nix-channel --update
+nixos-rebuild switch
+</code></pre></div><h2 id="7-cleaning-the-nix-store">7. <a href="https://nixos.org/nixos/manual#sec-nix-gc">Cleaning the Nix Store</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nix-collect-garbage <span style="color:#f92672">[</span>--delete-old -d<span style="color:#f92672">]</span>
+</code></pre></div><h2 id="8-package-management">8. <a href="https://nixos.org/nixos/manual#sec-package-management">Package Management</a></h2>
+<h3 id="customising-packages"><a href="https://nixos.org/nixos/manual#sec-customising-packages">Customising Packages</a></h3>
+<p>See also:</p>
+<ul>
+<li><a href="https://nixos.org/nixpkgs/manual#chap-overlays">Overlays</a></li>
+<li><a href="https://nixos.org/nixpkgs/manual#sec-modify-via-packageOverrides">Modify packages via packageOverrides</a></li>
+</ul>
+<h3 id="adding-custom-packages"><a href="https://nixos.org/nixos/manual#sec-custom-packages">Adding Custom Packages</a></h3>
+<h2 id="9-developing">9. Developing</h2>
+<h3 id="support-for-specific-programming-languages-and-frameworks"><a href="https://nixos.org/nixpkgs/manual#chap-language-support">Support for specific programming languages and frameworks</a></h3>
+<h3 id="i-installed-a-library-but-my-compiler-is-not-finding-it--why"><a href="https://nixos.wiki/wiki/FAQ#I_installed_a_library_but_my_compiler_is_not_finding_it._Why.3F">I installed a library but my compiler is not finding it.  Why?</a></h3>
+<p>Command-line:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nix-shell <span style="color:#f92672">[</span>--packages -p<span style="color:#f92672">]</span> pkg-config rustc cargo
+</code></pre></div><p>Using <code>default.nix</code> or <code>shell.nix</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">with import &lt;nixpkgs&gt; <span style="color:#f92672">{}</span>;
+
+mkShell <span style="color:#f92672">{</span>
+  buildInputs <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+    pkg-config
+    rustc
+    cargo
+  <span style="color:#f92672">]</span>;
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nix-shell
+</code></pre></div><p><a href="https://nixos.org/nixpkgs/manual#sec-pkgs-mkShell">pkgs.mkShell</a> is a simplified version of <code>stdenv.mkDerivation</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">with import &lt;nixpkgs&gt; <span style="color:#f92672">{}</span>;
+
+stdenv.mkDerivation <span style="color:#f92672">{</span>
+  name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dev-environment&#34;</span>;
+  buildInputs <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+    pkg-config
+    rustc
+    cargo
+  <span style="color:#f92672">]</span>;
+<span style="color:#f92672">}</span>
+</code></pre></div><p>You can see its definition on <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/mkshell/default.nix">GitHub</a>.</p>
+<h3 id="im-working-on-a-new-package-how-can-i-build-it-without-adding-it-to-nixpkgs"><a href="https://nixos.wiki/wiki/FAQ#I.27m_working_on_a_new_package.2C_how_can_I_build_it_without_adding_it_to_nixpkgs.3F">I’m working on a new package, how can I build it without adding it to nixpkgs?</a></h3>
+<p>Assuming your package name is <code>default.nix</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nix build <span style="color:#e6db74">&#39;(
+</span><span style="color:#e6db74">  with import &lt;nixpkgs&gt; {};
+</span><span style="color:#e6db74">  callPackage ./default.nix {}
+</span><span style="color:#e6db74">)&#39;</span>
+<span style="color:#75715e"># result → /nix/store/{hash}-{name}-{version}</span>
+</code></pre></div><h2 id="10-faq">10. <a href="https://nixos.wiki/wiki/FAQ">FAQ</a></h2>
+
+
+    </main>
+    <hr class="bottom">
+    <footer>
+  <ul class="social">
+    
+      <li>
+        <a href="https://github.com/alexherbo2">GitHub</a>
+      </li>
+    
+      <li>
+        <a href="https://instagram.com/alexherbo2">Instagram</a>
+      </li>
+    
+      <li>
+        <a href="https://youtube.com/channel/UCv9nzkds34PnGOu6u_QvVBQ">YouTube</a>
+      </li>
+    
+  </ul>
+  <ul class="credits">
+    
+      <li>
+        Hosted on <a href="https://github.com/alexherbo2/website">GitHub</a>
+      </li>
+    
+    <li>
+      Powered by <a href="https://gohugo.io">Hugo</a>
+    </li>
+    <li>
+      Theme from <a href="http://stevelosh.com">Steve Losh</a>
+    </li>
+  </ul>
+</footer>
+
+  </body>
+</html>

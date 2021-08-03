@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configs on alexherbo2</title>
+    <link>https://alexherbo2.github.io/config/</link>
+    <description>Recent content in Configs on alexherbo2</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://alexherbo2.github.io/config/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tmux: Move pane to window</title>
+      <link>https://alexherbo2.github.io/config/tmux/move-pane-to-window/</link>
+      <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/config/tmux/move-pane-to-window/</guid>
+      <description>Using tmux-move-pane-to-window from tmux-tools.
+Move focused pane to window:
+~/.tmux.conf
+bind-key &#39;!&#39; run-shell &#39;tmux-move-pane-to-window 1&#39; bind-key &#39;@&#39; run-shell &#39;tmux-move-pane-to-window 2&#39; bind-key &#39;#&#39; run-shell &#39;tmux-move-pane-to-window 3&#39; bind-key &#39;$&#39; run-shell &#39;tmux-move-pane-to-window 4&#39; bind-key &#39;%&#39; run-shell &#39;tmux-move-pane-to-window 5&#39; bind-key &#39;^&#39; run-shell &#39;tmux-move-pane-to-window 6&#39; bind-key &#39;&amp;amp;&#39; run-shell &#39;tmux-move-pane-to-window 7&#39; bind-key &#39;*&#39; run-shell &#39;tmux-move-pane-to-window 8&#39; bind-key &#39;(&#39; run-shell &#39;tmux-move-pane-to-window 9&#39; bind-key &#39;)&#39; run-shell &#39;tmux-move-pane-to-window 10&#39; Note: It is Shift + &amp;lt;number&amp;gt; on the US layout.</description>
+    </item>
+    
+    <item>
+      <title>tmux: Switch or create workspace</title>
+      <link>https://alexherbo2.github.io/config/tmux/switch-or-create-workspace/</link>
+      <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/config/tmux/switch-or-create-workspace/</guid>
+      <description>Using tmux-select-window from tmux-tools.
+Switches to the specified window. If the window does not exist, it will be created.
+Switch to window:
+~/.tmux.conf
+bind-key 1 run-shell &#39;tmux-select-window 1&#39; bind-key 2 run-shell &#39;tmux-select-window 2&#39; bind-key 3 run-shell &#39;tmux-select-window 3&#39; bind-key 4 run-shell &#39;tmux-select-window 4&#39; bind-key 5 run-shell &#39;tmux-select-window 5&#39; bind-key 6 run-shell &#39;tmux-select-window 6&#39; bind-key 7 run-shell &#39;tmux-select-window 7&#39; bind-key 8 run-shell &#39;tmux-select-window 8&#39; bind-key 9 run-shell &#39;tmux-select-window 9&#39; bind-key 0 run-shell &#39;tmux-select-window 10&#39; Discussion: reddit • tmux • Switch or create workspace</description>
+    </item>
+    
+    <item>
+      <title>Make tmux modal</title>
+      <link>https://alexherbo2.github.io/config/tmux/make-tmux-modal/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/config/tmux/make-tmux-modal/</guid>
+      <description>Unset prefix. Enter prefix mode (yellow) with Control + Space. Exit mode (green) with Escape.  ~/.tmux.conf
+set-option -g prefix None bind-key -n C-Space set-option key-table prefix bind-key Escape set-option key-table root You might want to display the current mode with a different color in the status line.
+~/.tmux.conf
+set-option -g status-style &#39;fg=black,bg=#{?#{==:#{client_key_table},root},green,yellow}&#39; set-option -g status-left &#39;[#{session_name}] #{?#{!=:#{client_key_table},root},[#{client_key_table}] ,}&#39; set-option -g status-left-length 0 Note: Only display active modes in the status line.</description>
+    </item>
+    
+    <item>
+      <title>tmux: Add prefix mode</title>
+      <link>https://alexherbo2.github.io/config/tmux/add-prefix-mode/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/config/tmux/add-prefix-mode/</guid>
+      <description>Enter prefix mode (yellow) with the prefix key (type the prefix key twice). Exit mode (green) with Escape.  ~/.tmux.conf
+run-shell { tmux bind-key #{prefix} set-option key-table prefix } bind-key Escape set-option key-table root Note: bind-key does not work with variables, hence using run-shell instead of simply:
+bind-key &#39;#{prefix}&#39; set-option key-table prefix You might want to display the current mode with a different color in the status line.
+~/.tmux.conf</description>
+    </item>
+    
+    <item>
+      <title>Control mpv from the command-line</title>
+      <link>https://alexherbo2.github.io/config/mpv/control-mpv-from-the-command-line/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexherbo2.github.io/config/mpv/control-mpv-from-the-command-line/</guid>
+      <description>Configuration Enable the IPC support to control mpv from the command-line.
+~/.config/mpv/mpv.conf
+input-ipc-server=~~/socket Commands Play / Pause echo cycle pause | socat - &amp;#34;$XDG_CONFIG_HOME/mpv/socket&amp;#34; You can add a key-binding to XF86AudioPlay and XF86AudioPause media controls.
+Next Track echo playlist-next | socat - &amp;#34;$XDG_CONFIG_HOME/mpv/socket&amp;#34; You can add a key-binding to XF86AudioNext media control.
+Previous Track echo playlist-prev | socat - &amp;#34;$XDG_CONFIG_HOME/mpv/socket&amp;#34; You can add a key-binding to XF86AudioPrev media control.</description>
+    </item>
+    
+  </channel>
+</rss>

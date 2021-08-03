@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Puppeteer Notes · alexherbo2</title>
+  
+    <meta name="description" content="First experiment with Puppeteer">
+  
+  
+  
+    <link href="https://github.com/favicon.ico" rel="icon">
+  
+  
+  
+    <link href="/css/main.css" rel="stylesheet">
+  
+    <link href="/packages/selection.css" rel="stylesheet">
+  
+    <link href="/packages/krabby.css" rel="stylesheet">
+  
+  
+  
+    <script src="/js/main.js"></script>
+  
+    <script src="/packages/modal.js"></script>
+  
+    <script src="/packages/mouse-selection.js"></script>
+  
+    <script src="/packages/prompt.js"></script>
+  
+    <script src="/packages/hint.js"></script>
+  
+    <script src="/packages/mark.js"></script>
+  
+    <script src="/packages/selection.js"></script>
+  
+    <script src="/packages/mouse.js"></script>
+  
+    <script src="/packages/clipboard.js"></script>
+  
+    <script src="/packages/scroll.js"></script>
+  
+    <script src="/packages/player.js"></script>
+  
+    <script src="/packages/krabby.js"></script>
+  
+    <script src="/config.js"></script>
+  
+  
+  <script src="https://kit.fontawesome.com/b030fd7e2d.js" crossorigin="anonymous"></script>
+  
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" rel="stylesheet">
+</head>
+
+  <body>
+    <div id="header">
+      <header>
+  <a href="/">alexherbo2</a>
+</header>
+
+      <nav>
+  <ul>
+    
+      <li>
+        <a href="/blog">Blog</a>
+      </li>
+    
+      <li>
+        <a href="/citations">Citations</a>
+      </li>
+    
+      <li>
+        <a href="/config">Config</a>
+      </li>
+    
+      <li>
+        <a href="/projects">Projects</a>
+      </li>
+    
+      <li>
+        <a href="/wiki">Wiki</a>
+      </li>
+    
+  </ul>
+</nav>
+
+    </div>
+    <hr class="top">
+    <main>
+      
+  
+  
+  <div id="heading">
+    <div class="wrap">
+      <h1><a href="https://alexherbo2.github.io/wiki/puppeteer/notes/">Puppeteer Notes</a></h1>
+      <ul class="icons">
+        
+        
+          <li>
+            <a title="Raw" href="https://github.com/alexherbo2/website/raw/master/content/wiki/puppeteer/notes.md"><i class="far fa-file"></i></a>
+          </li>
+        
+        
+          <li>
+            <a title="September 16, 2020" href="https://github.com/alexherbo2/website/commits/master/content/wiki/puppeteer/notes.md"><i class="fab fa-git-square"></i></a>
+          </li>
+        
+        
+          <li>
+            <a title="Suggest an edit" href="https://github.com/alexherbo2/website/edit/master/content/wiki/puppeteer/notes.md"><i class="fas fa-pen-square"></i></a>
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="date">
+        
+          <p>Posted on <time class="relative" datetime="2020-05-11 00:00:00 &#43;0000 UTC">May 11, 2020</time> (↻ <time class="relative" datetime="September 16, 2020">September 16, 2020</time>).</p>
+        
+      </div>
+    
+  </div>
+  <div class="invisible">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#repository">Repository</a></li>
+    <li><a href="#links">Links</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#examples">Examples</a>
+      <ul>
+        <li><a href="#headless">Headless</a></li>
+        <li><a href="#log-in">Log in</a></li>
+        <li><a href="#evaluate">Evaluate</a></li>
+        <li><a href="#waiting-for-something">Waiting for something</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+  <div id="context-navigation">
+    <a><i class="fas fa-angle-up"></i></a>
+  </div>
+  <script>
+  DOMContentLoaded = (event) => {
+    const tableOfContents = document.querySelector('#TableOfContents')
+    if (tableOfContents) {
+      const node = document.querySelector('#table-of-contents')
+      node.replaceWith(tableOfContents)
+    }
+    const content = document.querySelector('main')
+    const headings = content.querySelectorAll('h1[id], h2[id], h3[id], h4[id]')
+    for (const heading of headings) {
+      if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) {
+        const item = tableOfContents.querySelector(`[href="#${heading.id}"]`)
+        if (item) {
+          item.parentElement.remove()
+        }
+      }
+    }
+  }
+  document.addEventListener('DOMContentLoaded', DOMContentLoaded)
+</script>
+
+<h2>Table of Contents</h2>
+<div id="table-of-contents"></div>
+
+<h2 id="repository">Repository</h2>
+<ul>
+<li><a href="https://github.com/alexherbo2/puppeteer-experiments">puppeteer-experiments</a></li>
+</ul>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://pptr.dev">https://pptr.dev</a></li>
+<li><a href="https://github.com/puppeteer/puppeteer">https://github.com/puppeteer/puppeteer</a></li>
+<li><a href="https://npmjs.com/package/puppeteer">https://npmjs.com/package/puppeteer</a></li>
+<li><a href="https://github.com/puppeteer/puppeteer/blob/master/docs/api.md">https://github.com/puppeteer/puppeteer/blob/master/docs/api.md</a></li>
+</ul>
+<h2 id="videos">Videos</h2>
+<ul>
+<li><a href="https://youtu.be/ARt3zDHSsd4">Web Scraping With NodeJS and Puppeteer</a></li>
+<li><a href="https://youtu.be/lhZOFUY1weo">The power of Headless Chrome and browser automation (Google I/O &lsquo;18)</a></li>
+<li><a href="https://youtu.be/o7MJ1-UhS50">Scraping Reddit with Puppeteer &amp; NodeJs</a></li>
+</ul>
+<h2 id="examples">Examples</h2>
+<p>See <a href="https://github.com/alexherbo2/puppeteer-experiments">puppeteer-experiments</a>.</p>
+<h3 id="headless">Headless</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">browser</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">puppeteer</span>.<span style="color:#a6e22e">launch</span>({
+  <span style="color:#a6e22e">headless</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+})
+</code></pre></div><h3 id="log-in">Log in</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">focus</span>(<span style="color:#e6db74">&#39;#username&#39;</span>)
+<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">keyboard</span>.<span style="color:#a6e22e">type</span>(<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">username</span>)
+<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">focus</span>(<span style="color:#e6db74">&#39;#password&#39;</span>)
+<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">keyboard</span>.<span style="color:#a6e22e">type</span>(<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">password</span>)
+<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">click</span>(<span style="color:#e6db74">&#39;#log-in&#39;</span>)
+</code></pre></div><h3 id="evaluate">Evaluate</h3>
+<p><strong>Note</strong>: The return value must be serializable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">evaluate</span>(() =&gt; {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;.item&#39;</span>)
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">elements</span>).<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">element</span>) =&gt; {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">property</span> <span style="color:#f92672">=</span> {
+      <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">href</span>,
+      <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">textContent</span>
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">property</span>
+  })
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">items</span>
+})
+</code></pre></div><p>Shortcut to <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll"><code>document.querySelectorAll</code></a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">$$eval</span>(<span style="color:#e6db74">&#39;.item&#39;</span>, (<span style="color:#a6e22e">elements</span>) =&gt; {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">element</span>) =&gt; {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">property</span> <span style="color:#f92672">=</span> {
+      <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">href</span>,
+      <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">textContent</span>
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">property</span>
+  })
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">items</span>
+})
+</code></pre></div><p>See also:</p>
+<ul>
+<li><code>$eval</code>: Same as <code>$$eval</code>, but with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"><code>document.querySelector</code></a>.</li>
+</ul>
+<p>Intermediate results:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">$$</span>(<span style="color:#e6db74">&#39;.item&#39;</span>)
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> []
+
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">element</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">elements</span>) {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">evaluate</span>((<span style="color:#a6e22e">element</span>) =&gt; <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">href</span>)
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">description</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">evaluate</span>((<span style="color:#a6e22e">element</span>) =&gt; <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">textContent</span>)
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">property</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">description</span> }
+  <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">property</span>)
+}
+</code></pre></div><p>See also:</p>
+<ul>
+<li><code>$</code>: Same as <code>$$</code>, but with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"><code>document.querySelector</code></a>.</li>
+</ul>
+<h3 id="waiting-for-something">Waiting for something</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">waitForSelector</span>(<span style="color:#e6db74">&#39;#something-taking-time-to-appear&#39;</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">waitFor</span>(() =&gt; {
+  <span style="color:#66d9ef">return</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#something&#39;</span>) <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>
+})
+</code></pre></div>
+
+    </main>
+    <hr class="bottom">
+    <footer>
+  <ul class="social">
+    
+      <li>
+        <a href="https://github.com/alexherbo2">GitHub</a>
+      </li>
+    
+      <li>
+        <a href="https://instagram.com/alexherbo2">Instagram</a>
+      </li>
+    
+      <li>
+        <a href="https://youtube.com/channel/UCv9nzkds34PnGOu6u_QvVBQ">YouTube</a>
+      </li>
+    
+  </ul>
+  <ul class="credits">
+    
+      <li>
+        Hosted on <a href="https://github.com/alexherbo2/website">GitHub</a>
+      </li>
+    
+    <li>
+      Powered by <a href="https://gohugo.io">Hugo</a>
+    </li>
+    <li>
+      Theme from <a href="http://stevelosh.com">Steve Losh</a>
+    </li>
+  </ul>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>GitInfo · alexherbo2</title>
+  
+    <meta name="description" content="Git Cheat Sheet">
+  
+  
+  
+    <link href="https://github.com/favicon.ico" rel="icon">
+  
+  
+  
+    <link href="/css/main.css" rel="stylesheet">
+  
+    <link href="/packages/selection.css" rel="stylesheet">
+  
+    <link href="/packages/krabby.css" rel="stylesheet">
+  
+  
+  
+    <script src="/js/main.js"></script>
+  
+    <script src="/packages/modal.js"></script>
+  
+    <script src="/packages/mouse-selection.js"></script>
+  
+    <script src="/packages/prompt.js"></script>
+  
+    <script src="/packages/hint.js"></script>
+  
+    <script src="/packages/mark.js"></script>
+  
+    <script src="/packages/selection.js"></script>
+  
+    <script src="/packages/mouse.js"></script>
+  
+    <script src="/packages/clipboard.js"></script>
+  
+    <script src="/packages/scroll.js"></script>
+  
+    <script src="/packages/player.js"></script>
+  
+    <script src="/packages/krabby.js"></script>
+  
+    <script src="/config.js"></script>
+  
+  
+  <script src="https://kit.fontawesome.com/b030fd7e2d.js" crossorigin="anonymous"></script>
+  
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" rel="stylesheet">
+</head>
+
+  <body>
+    <div id="header">
+      <header>
+  <a href="/">alexherbo2</a>
+</header>
+
+      <nav>
+  <ul>
+    
+      <li>
+        <a href="/blog">Blog</a>
+      </li>
+    
+      <li>
+        <a href="/citations">Citations</a>
+      </li>
+    
+      <li>
+        <a href="/config">Config</a>
+      </li>
+    
+      <li>
+        <a href="/projects">Projects</a>
+      </li>
+    
+      <li>
+        <a href="/wiki">Wiki</a>
+      </li>
+    
+  </ul>
+</nav>
+
+    </div>
+    <hr class="top">
+    <main>
+      
+  
+  
+  <div id="heading">
+    <div class="wrap">
+      <h1><a href="https://alexherbo2.github.io/wiki/git/info/">GitInfo</a></h1>
+      <ul class="icons">
+        
+        
+          <li>
+            <a title="Raw" href="https://github.com/alexherbo2/website/raw/master/content/wiki/git/info.md"><i class="far fa-file"></i></a>
+          </li>
+        
+        
+          <li>
+            <a title="March 28, 2019" href="https://github.com/alexherbo2/website/commits/master/content/wiki/git/info.md"><i class="fab fa-git-square"></i></a>
+          </li>
+        
+        
+          <li>
+            <a title="Suggest an edit" href="https://github.com/alexherbo2/website/edit/master/content/wiki/git/info.md"><i class="fas fa-pen-square"></i></a>
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="date">
+        
+          <p>Posted on <time class="relative" datetime="2019-03-28 00:00:00 &#43;0000 UTC">March 28, 2019</time>.</p>
+        
+      </div>
+    
+  </div>
+  <div class="invisible">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#root">Root</a></li>
+    <li><a href="#git-directory">Git directory</a></li>
+    <li><a href="#branch">Branch</a></li>
+    <li><a href="#commit">Commit</a></li>
+    <li><a href="#stashes">Stashes</a></li>
+    <li><a href="#rebasing">Rebasing</a></li>
+    <li><a href="#porcelain">Porcelain</a>
+      <ul>
+        <li><a href="#modified">Modified</a></li>
+        <li><a href="#added">Added</a></li>
+        <li><a href="#deleted">Deleted</a></li>
+        <li><a href="#untracked">Untracked</a></li>
+        <li><a href="#modifications">Modifications</a></li>
+        <li><a href="#unstaged-changes">Unstaged changes</a></li>
+        <li><a href="#ready-to-commit">Ready to commit</a></li>
+        <li><a href="#merge-conflicts">Merge conflicts</a></li>
+      </ul>
+    </li>
+    <li><a href="#icons">Icons</a>
+      <ul>
+        <li><a href="#git-i-classfab-fa-github-alti">Git (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</a></li>
+        <li><a href="#new-">New (•)</a></li>
+        <li><a href="#untracked-branch-i-classfas-fa-anchori">Untracked branch (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</a></li>
+        <li><a href="#push-i-classfas-fa-angle-double-downi">Push (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</a></li>
+        <li><a href="#pull-i-classfas-fa-angle-double-upi">Pull (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</a></li>
+        <li><a href="#untracked-i-classfas-fa-tinti">Untracked (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</a></li>
+        <li><a href="#modified-i-classfas-fa-pencil-alti">Modified (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</a></li>
+        <li><a href="#added-i-classfas-fa-plusi">Added (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</a></li>
+        <li><a href="#deleted-i-classfas-fa-minusi">Deleted (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</a></li>
+        <li><a href="#ready-i-classfas-fa-sign-out-alti">Ready (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</a></li>
+        <li><a href="#rebase-i-classfas-fa-wrenchi">Rebase (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</a></li>
+        <li><a href="#merge-i-classfas-fa-code-branchi">Merge (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</a></li>
+        <li><a href="#diverged-i-classfas-fa-code-branchi">Diverged (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</a></li>
+        <li><a href="#detached-i-classfas-fa-unlinki">Detached (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</a></li>
+        <li><a href="#stashes-i-classfas-fa-hourglass-starti">Stashes (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</a></li>
+        <li><a href="#tags-i-classfas-fa-tagi">Tags (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+  <div id="context-navigation">
+    <a><i class="fas fa-angle-up"></i></a>
+  </div>
+  <script>
+  DOMContentLoaded = (event) => {
+    const tableOfContents = document.querySelector('#TableOfContents')
+    if (tableOfContents) {
+      const node = document.querySelector('#table-of-contents')
+      node.replaceWith(tableOfContents)
+    }
+    const content = document.querySelector('main')
+    const headings = content.querySelectorAll('h1[id], h2[id], h3[id], h4[id]')
+    for (const heading of headings) {
+      if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) {
+        const item = tableOfContents.querySelector(`[href="#${heading.id}"]`)
+        if (item) {
+          item.parentElement.remove()
+        }
+      }
+    }
+  }
+  document.addEventListener('DOMContentLoaded', DOMContentLoaded)
+</script>
+
+<h2>Table of Contents</h2>
+<div id="table-of-contents"></div>
+
+<h2 id="root">Root</h2>
+<pre><code>git rev-parse --show-toplevel
+</code></pre><h2 id="git-directory">Git directory</h2>
+<pre><code>git rev-parse --git-dir
+</code></pre><p>You can use its exit status to determine if the current directory is a Git repository.</p>
+<h2 id="branch">Branch</h2>
+<pre><code>git rev-parse --abbrev-ref HEAD
+</code></pre><p><code>HEAD</code> indicates a detached head.</p>
+<h2 id="commit">Commit</h2>
+<pre><code>git rev-parse [--short] HEAD
+</code></pre><p>You can use its exit status to ask if there is at least one commit.</p>
+<h2 id="stashes">Stashes</h2>
+<pre><code>git stash list
+</code></pre><p>You can use <code>wc [--lines -l]</code> to count stashes.</p>
+<h2 id="rebasing">Rebasing</h2>
+<pre><code>.git
+├── rebase-apply
+│  └── …
+└── rebase-merge
+   └── …
+</code></pre><p>Is rebasing if <code>rebase-apply</code> or <code>rebase-merge</code> directories exist.</p>
+<h2 id="porcelain">Porcelain</h2>
+<pre><code>git status --porcelain
+</code></pre><p>Porcelain format:</p>
+<p>The <code>[1][2]</code> is a two-letter status code.</p>
+<pre><code>[1][2]
+ │  │
+ │  └── Status
+ └───── Status (Cached)
+</code></pre><p>Status code:</p>
+<pre><code>␣ → Unmodified
+M → Modified
+A → Added
+D → Deleted
+R → Renamed
+C → Copied
+U → Updated but unmerged
+?? → Untracked
+!! → Ignored
+</code></pre><h3 id="modified">Modified</h3>
+<pre><code>[*][M]
+</code></pre><h3 id="added">Added</h3>
+<pre><code>[A][␣]
+</code></pre><h3 id="deleted">Deleted</h3>
+<pre><code>[*][D]
+</code></pre><h3 id="untracked">Untracked</h3>
+<pre><code>[?][?]
+</code></pre><h3 id="modifications">Modifications</h3>
+<pre><code>[*][M]
+[*][A]
+[*][D]
+[*][?]
+</code></pre><h3 id="unstaged-changes">Unstaged changes</h3>
+<pre><code>[*][Not ␣]
+</code></pre><h3 id="ready-to-commit">Ready to commit</h3>
+<pre><code>[*][␣]
+</code></pre><h3 id="merge-conflicts">Merge conflicts</h3>
+<pre><code>[U][U]
+</code></pre><h2 id="icons">Icons</h2>
+<h3 id="git-i-classfab-fa-github-alti">Git (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Glyph</span>: <span style="color:#ae81ff"></span>
+<span style="color:#f92672">HTML</span>: <span style="color:#ae81ff">&lt;i class=&#34;fab fa-github-alt&#34;&gt;&lt;/i&gt;</span>
+<span style="color:#f92672">Page</span>: <span style="color:#ae81ff">https://fontawesome.com/icons/github-alt</span>
+</code></pre></div><h3 id="new-">New (•)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Glyph</span>: <span style="color:#ae81ff">•</span>
+<span style="color:#f92672">Page</span>: <span style="color:#ae81ff">https://unicode-table.com/en/2022/</span>
+</code></pre></div><h3 id="untracked-branch-i-classfas-fa-anchori">Untracked branch (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Glyph</span>: <span style="color:#ae81ff"></span>
+<span style="color:#f92672">HTML</span>: <span style="color:#ae81ff">&lt;i class=&#34;fas fa-anchor&#34;&gt;&lt;/i&gt;</span>
+<span style="color:#f92672">Page</span>: <span style="color:#ae81ff">https://fontawesome.com/icons/anchor</span>
+</code></pre></div><h3 id="push-i-classfas-fa-angle-double-downi">Push (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Glyph</span>: <span style="color:#ae81ff"></span>
+<span style="color:#f92672">HTML</span>: <span style="color:#ae81ff">&lt;i class=&#34;fas fa-angle-double-down&#34;&gt;&lt;/i&gt;</span>
+<span style="color:#f92672">Page</span>: <span style="color:#ae81ff">https://fontawesome.com/icons/angle-double-down</span>
+</code></pre></div><h3 id="pull-i-classfas-fa-angle-double-upi">Pull (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Glyph</span>: <span style="color:#ae81ff"></span>
+<span style="color:#f92672">HTML</span>: <span style="color:#ae81ff">&lt;i class=&#34;fas fa-angle-double-up&#34;&gt;&lt;/i&gt;</span>
+<span style="color:#f92672">Page</span>: <span style="color:#ae81ff">https://fontawesome.com/icons/angle-double-up</span>
+</code></pre></div><h3 id="untracked-i-classfas-fa-tinti">Untracked (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Glyph</span>: <span style="color:#ae81ff"></span>
+<span style="color:#f92672">HTML</span>: <span style="color:#ae81ff">&lt;i class=&#34;fas fa-tint&#34;&gt;&lt;/i&gt;</span>
+<span style="color:#f92672">Page</span>: <span style="color:#ae81ff">https://fontawesome.com/icons/tint</span>
+</code></pre></div><h3 id="modified-i-classfas-fa-pencil-alti">Modified (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Glyph</span>: <span style="color:#ae81ff"></span>
+<span style="color:#f92672">HTML</span>: <span style="color:#ae81ff">&lt;i class=&#34;fas fa-pencil-alt&#34;&gt;&lt;/i&gt;</span>
+<span style="color:#f92672">Page</span>: <span style="color:#ae81ff">https://fontawesome.com/icons/pencil-alt</span>
+</code></pre></div><h3 id="added-i-classfas-fa-plusi">Added (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Glyph</span>: <span style="color:#ae81ff"></span>
+<span style="color:#f92672">HTML</span>: <span style="color:#ae81ff">&lt;i class=&#34;fas fa-plus&#34;&gt;&lt;/i&gt;</span>
+<span style="color:#f92672">Page</span>: <span style="color:#ae81ff">https://fontawesome.com/icons/plus</span>
+</code></pre></div><h3 id="deleted-i-classfas-fa-minusi">Deleted (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Glyph</span>: <span style="color:#ae81ff"></span>
+<span style="color:#f92672">HTML</span>: <span style="color:#ae81ff">&lt;i class=&#34;fas fa-minus&#34;&gt;&lt;/i&gt;</span>
+<span style="color:#f92672">Page</span>: <span style="color:#ae81ff">https://fontawesome.com/icons/minus</span>
+</code></pre></div><h3 id="ready-i-classfas-fa-sign-out-alti">Ready (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Glyph</span>: <span style="color:#ae81ff"></span>
+<span style="color:#f92672">HTML</span>: <span style="color:#ae81ff">&lt;i class=&#34;fas fa-sign-out-alt&#34;&gt;&lt;/i&gt;</span>
+<span style="color:#f92672">Page</span>: <span style="color:#ae81ff">https://fontawesome.com/icons/sign-out-alt</span>
+</code></pre></div><h3 id="rebase-i-classfas-fa-wrenchi">Rebase (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Glyph</span>: <span style="color:#ae81ff"></span>
+<span style="color:#f92672">HTML</span>: <span style="color:#ae81ff">&lt;i class=&#34;fas fa-wrench&#34;&gt;&lt;/i&gt;</span>
+<span style="color:#f92672">Page</span>: <span style="color:#ae81ff">https://fontawesome.com/icons/wrench</span>
+</code></pre></div><h3 id="merge-i-classfas-fa-code-branchi">Merge (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Glyph</span>: <span style="color:#ae81ff"></span>
+<span style="color:#f92672">HTML</span>: <span style="color:#ae81ff">&lt;i class=&#34;fas fa-code-branch&#34;&gt;&lt;/i&gt;</span>
+<span style="color:#f92672">Page</span>: <span style="color:#ae81ff">https://fontawesome.com/icons/code-branch</span>
+</code></pre></div><h3 id="diverged-i-classfas-fa-code-branchi">Diverged (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Glyph</span>: <span style="color:#ae81ff"></span>
+<span style="color:#f92672">HTML</span>: <span style="color:#ae81ff">&lt;i class=&#34;fas fa-code-branch&#34;&gt;&lt;/i&gt;</span>
+<span style="color:#f92672">Page</span>: <span style="color:#ae81ff">https://fontawesome.com/icons/code-branch</span>
+</code></pre></div><h3 id="detached-i-classfas-fa-unlinki">Detached (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Glyph</span>: <span style="color:#ae81ff"></span>
+<span style="color:#f92672">HTML</span>: <span style="color:#ae81ff">&lt;i class=&#34;fas fa-unlink&#34;&gt;&lt;/i&gt;</span>
+<span style="color:#f92672">Page</span>: <span style="color:#ae81ff">https://fontawesome.com/icons/unlink</span>
+</code></pre></div><h3 id="stashes-i-classfas-fa-hourglass-starti">Stashes (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Glyph</span>: <span style="color:#ae81ff"></span>
+<span style="color:#f92672">HTML</span>: <span style="color:#ae81ff">&lt;i class=&#34;fas fa-hourglass-start&#34;&gt;&lt;/i&gt;</span>
+<span style="color:#f92672">Page</span>: <span style="color:#ae81ff">https://fontawesome.com/icons/hourglass-start</span>
+</code></pre></div><h3 id="tags-i-classfas-fa-tagi">Tags (<!-- raw HTML omitted --><!-- raw HTML omitted -->)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Glyph</span>: <span style="color:#ae81ff"></span>
+<span style="color:#f92672">HTML</span>: <span style="color:#ae81ff">&lt;i class=&#34;fas fa-tag&#34;&gt;&lt;/i&gt;</span>
+<span style="color:#f92672">Page</span>: <span style="color:#ae81ff">https://fontawesome.com/icons/tag</span>
+</code></pre></div>
+
+    </main>
+    <hr class="bottom">
+    <footer>
+  <ul class="social">
+    
+      <li>
+        <a href="https://github.com/alexherbo2">GitHub</a>
+      </li>
+    
+      <li>
+        <a href="https://instagram.com/alexherbo2">Instagram</a>
+      </li>
+    
+      <li>
+        <a href="https://youtube.com/channel/UCv9nzkds34PnGOu6u_QvVBQ">YouTube</a>
+      </li>
+    
+  </ul>
+  <ul class="credits">
+    
+      <li>
+        Hosted on <a href="https://github.com/alexherbo2/website">GitHub</a>
+      </li>
+    
+    <li>
+      Powered by <a href="https://gohugo.io">Hugo</a>
+    </li>
+    <li>
+      Theme from <a href="http://stevelosh.com">Steve Losh</a>
+    </li>
+  </ul>
+</footer>
+
+  </body>
+</html>
